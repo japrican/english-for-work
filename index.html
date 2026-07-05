@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はじめての現場英会話</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1c1a; --paper:#f8fafc; --accent:#4f46e5; --accent-deep:#3730a3;
+  --gray:#57726e; --line:#e0e7ff; --kazu:#0284c7; --raj:#ea580c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--paper);}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+.header{
+  background:linear-gradient(135deg,#4f46e5 0%,#818cf8 100%);
+  color:#fff; padding:20px 16px 24px; position:relative;
+}
+.header-title{font-size:20px;font-weight:900;}
+.header-sub{font-size:12.5px;opacity:0.9;margin-top:4px;}
+
+.scene-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:10px; padding:16px;
+}
+.scene-btn{
+  background:#fff; border:2px solid var(--line); border-radius:14px;
+  padding:12px 10px; text-align:left; cursor:pointer; transition:all .15s;
+}
+.scene-btn:hover{border-color:var(--accent); transform:translateY(-2px);}
+.scene-btn.locked{opacity:0.55;}
+.scene-num{font-size:11px; font-weight:700; color:var(--accent);}
+.scene-title{font-size:13px; font-weight:700; margin-top:2px; line-height:1.3;}
+.scene-done{font-size:11px; color:#16a34a; margin-top:4px;}
+
+.lesson-view{padding:16px; max-width:640px; margin:0 auto;}
+.back-btn{
+  background:none; border:none; color:var(--accent); font-weight:700;
+  font-size:14px; cursor:pointer; margin-bottom:12px;
+}
+.lesson-title{font-size:18px; font-weight:900; margin-bottom:14px;}
+
+.dialogue-box{background:#fff; border:2px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px;}
+.line{display:flex; gap:10px; margin-bottom:14px;}
+.avatar{
+  width:40px; height:40px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:900; font-size:13px;
+}
+.avatar.kazu{background:var(--kazu);}
+.avatar.raj{background:var(--raj);}
+.line-body{flex:1;}
+.line-name{font-size:11px; font-weight:700; color:var(--gray); margin-bottom:2px;}
+.line-en{font-size:15px; font-weight:600; line-height:1.6;}
+.speak-btn{
+  border:none; background:#f1f5f9; border-radius:50%; width:30px; height:30px;
+  font-size:14px; cursor:pointer; margin-left:6px; flex-shrink:0; vertical-align:middle;
+}
+.speak-btn.speaking{background:var(--accent); color:#fff;}
+.vocab-speak-btn{
+  border:none; background:none; font-size:13px; cursor:pointer; margin-left:6px; opacity:.6;
+}
+.vocab-speak-btn.speaking{opacity:1;}
+
+.section-block{background:#fff; border:2px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px;}
+.section-label{font-size:12px; font-weight:900; color:var(--accent); letter-spacing:.05em; margin-bottom:8px;}
+.pattern-en{font-size:15px; font-weight:800;}
+.pattern-jp{font-size:13px; color:var(--gray); margin-top:4px;}
+.pattern-note{font-size:12.5px; color:#44403c; margin-top:8px; line-height:1.7;}
+
+.vocab-item{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #f1f5f9; font-size:13.5px;}
+.vocab-item:last-child{border-bottom:none;}
+.vocab-en{font-weight:700;}
+.vocab-jp{color:var(--gray);}
+
+.quiz-q{font-size:14px; margin-bottom:10px;}
+.quiz-opt{
+  display:block; width:100%; text-align:left; background:#f8fafc;
+  border:2px solid var(--line); border-radius:10px; padding:10px 12px;
+  margin-bottom:8px; cursor:pointer; font-size:13.5px; transition:all .1s;
+}
+.quiz-opt:hover{border-color:var(--accent);}
+.quiz-opt.correct{background:#dcfce7; border-color:#16a34a;}
+.quiz-opt.wrong{background:#fee2e2; border-color:#dc2626;}
+.quiz-result{font-size:13px; font-weight:700; margin-top:6px;}
+
+/* PORTAL LINK BUTTON */
+.portal-link-btn{
+  display:block; text-align:center; font-size:12px; font-weight:700;
+  color:#1c1c1a; background:rgba(255,255,255,0.6);
+  border:1.5px solid rgba(0,0,0,0.1); border-radius:100px;
+  padding:8px 16px; margin:16px auto; max-width:280px;
+  text-decoration:none; transition:all 0.15s;
+}
+.portal-link-btn:hover{background:rgba(255,255,255,0.9);}
+
+/* TRIAL BANNER */
+#trialBanner{
+  position:sticky; top:0; z-index:50; background:#fef3c7; color:#78350f;
+  font-size:12.5px; font-weight:700; text-align:center; padding:8px;
+}
+
+/* UNLOCK / PURCHASE OVERLAY */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:100;
+  display:flex; align-items:center; justify-content:center; padding:20px;
+}
+.overlay-card{
+  background:#fff; border-radius:18px; padding:28px 24px; max-width:340px;
+  text-align:center;
+}
+.overlay-title{font-size:18px; font-weight:900; margin-bottom:10px;}
+.overlay-text{font-size:13.5px; color:var(--gray); line-height:1.7; margin-bottom:18px;}
+.overlay-btn{
+  display:block; width:100%; background:var(--accent); color:#fff;
+  border:none; border-radius:12px; padding:14px; font-size:15px; font-weight:900;
+  cursor:pointer; text-decoration:none; margin-bottom:10px;
+}
+.overlay-close{background:none; border:none; color:var(--gray); font-size:12.5px; cursor:pointer;}
+</style>
+</head>
+<body>
+<script>
+const APP_ID = 'genba';
+// ============================================================
+// TRIAL & UNLOCK SYSTEM (7-day free trial → paid unlock)
+// ============================================================
+const TRIAL_DAYS = 7;
+const UNLOCK_STORAGE_KEY = 'app_unlocked_' + APP_ID;
+const BUNDLE_UNLOCK_KEY = 'bundle_unlocked_v1';
+const TRIAL_START_KEY = 'app_trial_start_' + APP_ID;
+
+function initTrial() {
+  if (!localStorage.getItem(TRIAL_START_KEY)) {
+    localStorage.setItem(TRIAL_START_KEY, Date.now().toString());
+  }
+}
+function isUnlocked() {
+  return localStorage.getItem(UNLOCK_STORAGE_KEY) === 'true'
+      || localStorage.getItem(BUNDLE_UNLOCK_KEY) === 'true';
+}
+function isTrialActive() {
+  const start = parseInt(localStorage.getItem(TRIAL_START_KEY) || Date.now().toString());
+  const elapsedDays = (Date.now() - start) / (1000 * 60 * 60 * 24);
+  return elapsedDays < TRIAL_DAYS;
+}
+function canAccess() {
+  return isUnlocked() || isTrialActive();
+}
+
+// ★★★ TODO: 実際のStripe Payment Linkに差し替えてください ★★★
+const PURCHASE_URL = 'https://buy.stripe.com/TODO_genba_eikaiwa';
+
+function showUnlockOverlay() {
+  const ov = document.createElement('div');
+  ov.className = 'overlay';
+  ov.innerHTML = `
+    <div class="overlay-card">
+      <div class="overlay-title">🔒 無料期間が終了しました</div>
+      <div class="overlay-text">「はじめての現場英会話」の無料体験（7日間）が終了しました。<br>引き続きご利用いただくには購入が必要です。</div>
+      <a href="${PURCHASE_URL}?unlock=yes" class="overlay-btn">今すぐ購入する</a>
+      <button class="overlay-close" onclick="this.closest('.overlay').remove()">閉じる</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+
+function showEarlyPurchaseOverlay() {
+  const ov = document.createElement('div');
+  ov.className = 'overlay';
+  ov.innerHTML = `
+    <div class="overlay-card">
+      <div class="overlay-title">✨ 気に入りましたか？</div>
+      <div class="overlay-text">無料体験はまだ続いています。<br>気に入ったら、今すぐ購入することもできます。</div>
+      <a href="${PURCHASE_URL}?unlock=yes" class="overlay-btn">今すぐ購入する</a>
+      <button class="overlay-close" onclick="this.closest('.overlay').remove()">閉じる</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+
+function showTrialBanner() {
+  const el = document.getElementById('trialBanner');
+  if (!el) return;
+  if (isUnlocked()) { el.style.display = 'none'; return; }
+  const start = parseInt(localStorage.getItem(TRIAL_START_KEY) || Date.now().toString());
+  const remain = Math.max(0, TRIAL_DAYS - Math.floor((Date.now() - start) / (1000 * 60 * 60 * 24)));
+  if (remain <= 0) {
+    el.style.display = 'none';
+    return;
+  }
+  el.style.display = 'block';
+  el.innerHTML = `🎁 無料体験あと${remain}日 <span onclick="showEarlyPurchaseOverlay()" style="text-decoration:underline;cursor:pointer;margin-left:6px;">今すぐ購入する</span>`;
+}
+
+// ============================================================
+// PRONUNCIATION（録音音声ファイル優先 → 無ければブラウザ音声で代用）
+// ============================================================
+let currentUtterance = null;
+let currentAudioEl = null;
+
+function stopAllSpeech() {
+  if (currentAudioEl) {
+    try { currentAudioEl.pause(); currentAudioEl.currentTime = 0; } catch (e) {}
+    currentAudioEl = null;
+  }
+  if (currentUtterance && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    currentUtterance = null;
+  }
+  document.querySelectorAll('.speak-btn, .vocab-speak-btn').forEach(b => {
+    b.textContent = '🔊';
+    b.classList.remove('speaking');
+  });
+}
+
+function speak(text, btn) {
+  const wasThisPlaying = btn.classList.contains('speaking');
+  stopAllSpeech();
+  if (wasThisPlaying) return; // 再生中に同じボタンを押したら「止める」だけ
+
+  const audioId = btn.dataset ? btn.dataset.audioId : null;
+  if (audioId) {
+    playPreGeneratedAudio(audioId, text, btn);
+  } else {
+    speakBrowserTTS(text, btn);
+  }
+}
+
+function playPreGeneratedAudio(audioId, text, btn) {
+  const audio = new Audio(`${audioId}.mp3`);
+  currentAudioEl = audio;
+  btn.textContent = '⏹';
+  btn.classList.add('speaking');
+
+  audio.addEventListener('ended', () => {
+    btn.textContent = '🔊';
+    btn.classList.remove('speaking');
+    currentAudioEl = null;
+  });
+  audio.addEventListener('error', () => {
+    // 録音ファイルがまだ無い・見つからない場合はブラウザ音声にフォールバック
+    currentAudioEl = null;
+    speakBrowserTTS(text, btn);
+  });
+  try {
+    const playPromise = audio.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {
+        currentAudioEl = null;
+        speakBrowserTTS(text, btn);
+      });
+    }
+  } catch (e) {
+    currentAudioEl = null;
+    speakBrowserTTS(text, btn);
+  }
+}
+
+function speakBrowserTTS(text, btn) {
+  if (!('speechSynthesis' in window)) return;
+  const gender = (btn.dataset && btn.dataset.gender) || 'male';
+
+  let voices = window.speechSynthesis.getVoices();
+  if (voices.length === 0) {
+    window.speechSynthesis.onvoiceschanged = () => speakBrowserTTS(text, btn);
+    window.speechSynthesis.getVoices();
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+
+  const enVoices = voices.filter(v => v.lang === 'en-US' || v.lang === 'en_US');
+  const allEnVoices = voices.filter(v => v.lang.startsWith('en'));
+
+  const maleNames = ['Aaron', 'Gordon', 'Fred', 'Ralph', 'Bruce', 'Reed', 'Rishi', 'Rocko', 'Thomas', 'Martin', 'Daniel'];
+  const femaleNames = ['Samantha', 'Victoria', 'Karen', 'Moira', 'Fiona', 'Tessa', 'Zira', 'Susan', 'Jenny'];
+
+  let voice = null;
+  if (gender === 'raj') {
+    // ラジブ（インド系）は 'Rishi' のような英語音声があれば優先、無ければ他の男性声
+    for (const name of ['Rishi', 'Veena', 'Aaron', 'Gordon', 'Fred']) {
+      voice = (enVoices.concat(allEnVoices)).find(v => v.name.includes(name));
+      if (voice) break;
+    }
+    if (!voice) voice = allEnVoices.find(v => v.name.toLowerCase().includes('male'));
+    if (!voice) voice = enVoices[0] || allEnVoices[0];
+    utterance.pitch = 0.95;
+    utterance.rate = 0.82;
+  } else {
+    for (const name of maleNames) {
+      voice = (enVoices.concat(allEnVoices)).find(v => v.name.includes(name));
+      if (voice) break;
+    }
+    if (!voice) voice = allEnVoices.find(v => v.name.toLowerCase().includes('male'));
+    if (!voice) voice = enVoices[0] || allEnVoices[0];
+    utterance.pitch = 1.0;
+    utterance.rate = 0.85;
+  }
+
+  if (voice) utterance.voice = voice;
+
+  utterance.onstart = () => {
+    btn.textContent = '⏹';
+    btn.classList.add('speaking');
+  };
+  utterance.onend = () => {
+    btn.textContent = '🔊';
+    btn.classList.remove('speaking');
+    currentUtterance = null;
+  };
+  utterance.onerror = () => {
+    btn.textContent = '🔊';
+    btn.classList.remove('speaking');
+    currentUtterance = null;
+  };
+
+  currentUtterance = utterance;
+  window.speechSynthesis.speak(utterance);
+}
+
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    window.speechSynthesis.getVoices();
+  };
+}
+</script>
+
+<div id="trialBanner"></div>
+
+<div class="header">
+  <div class="header-title">🏭 はじめての現場英会話</div>
+  <div class="header-sub">カズ＆ラジブと学ぶ、製造現場のリアル英会話（全13シーン）</div>
+</div>
+
+<a href="https://japrican.github.io/portal/" class="portal-link-btn">📚 学びのミカタ 他の教科を見る</a>
+
+<div id="sceneList" class="scene-grid"></div>
+<div id="lessonView" class="lesson-view" style="display:none;"></div>
+
+<script>
+const LESSONS = [
+{
+  title: "初出勤・自己紹介",
+  dialogue: [
+    {sp:"kazu", en:"Rajibu, welcome to the team! I'm Kazu. I'll be training you this week."},
+    {sp:"raj", en:"Nice to meet you, Kazu sir. I am very much excited to be working here."},
+    {sp:"kazu", en:"Don't worry. Just ask me if you don't understand something."},
+    {sp:"raj", en:"Okay, thank you. One doubt — can you please repeat that, slowly only?"},
+    {sp:"kazu", en:'Sure! I said, "Just ask me anytime."'}
+  ],
+  patternEn: "Can you please repeat that, slowly only?",
+  patternJp: "もう一度ゆっくり言ってもらえますか？",
+  patternNote: "ネイティブの言い方は\"Can you say that again slowly?\"ですが、repeatやonlyを使う言い方も現場ではとてもよく聞きます。意味さえ取れれば十分、という前提で聞き取り練習をしましょう。",
+  vocab: [["training","研修・トレーニング"],["doubt","疑問・質問（Indian Englishで question の意味）"],["repeat","繰り返す"],["excited","わくわくしている"],["anytime","いつでも"]],
+  quiz: {q:"ラジブが「もう一度お願いします」と言うときに使った表現は？",opts:["Can you say that again?","Can you please repeat that, slowly only?","Say it one more time?"],a:1}
+},
+{
+  title: "安全ルール・保護具の指示",
+  dialogue: [
+    {sp:"kazu", en:"Before you touch the machine, you must wear this helmet and gloves."},
+    {sp:"raj", en:"Okay sir. This helmet is little bit tight only."},
+    {sp:"kazu", en:"I'll get you a bigger size. Never remove gloves near the machine."},
+    {sp:"raj", en:"Understood. Safety first, no compromise."}
+  ],
+  patternEn: "You must wear ...",
+  patternJp: "〜を着用してください",
+  patternNote: "現場の必須ルールを伝える定番表現です。must を使うことで「絶対に守るべきこと」であることが伝わります。",
+  vocab: [["helmet","ヘルメット"],["gloves","手袋"],["tight","きつい"],["remove","外す"],["compromise","妥協"]],
+  quiz: {q:"「機械の近くで手袋を外さないで」という指示に合う単語は？",opts:["helmet","remove","tight"],a:1}
+},
+{
+  title: "機械の操作説明",
+  dialogue: [
+    {sp:"kazu", en:"This is the start button, this is the stop button. Press slowly."},
+    {sp:"raj", en:"This button only, or that red one also?"},
+    {sp:"kazu", en:"Only this one. The red one is emergency stop."},
+    {sp:"raj", en:"Ok ok, I am understanding now."}
+  ],
+  patternEn: "This is the ~ button.",
+  patternJp: "これが〜のボタンです",
+  patternNote: "物を指差しながら名前を教えるときの基本パターン。現場での操作説明では欠かせません。",
+  vocab: [["start","始める"],["stop","止める"],["press","押す"],["emergency","緊急"]],
+  quiz: {q:"「赤いボタン」は何のボタン？",opts:["start button","emergency stop","training button"],a:1}
+},
+{
+  title: "数量・単位の伝達",
+  dialogue: [
+    {sp:"kazu", en:"Please add five kilograms of powder into the tank."},
+    {sp:"raj", en:"Five kg, sir? Or five liter?"},
+    {sp:"kazu", en:"Kilograms. Weight, not volume."},
+    {sp:"raj", en:"Ok, I am weighing now."}
+  ],
+  patternEn: "Please add ~ kilograms/liters of ...",
+  patternJp: "〜キログラム／リットルの…を加えてください",
+  patternNote: "現場では kg（重さ）と liter（体積）を混同しやすいので、必ず単位を確認する習慣が大事です。",
+  vocab: [["kilogram","キログラム"],["liter","リットル"],["weight","重さ"],["volume","体積"],["tank","タンク"]],
+  quiz: {q:"kilogram が表すのは？",opts:["重さ","体積","長さ"],a:0}
+},
+{
+  title: "品質チェック・不良品の報告",
+  dialogue: [
+    {sp:"raj", en:"Sir, this one bottle is looking different color."},
+    {sp:"kazu", en:"Show me. Yes, that's defective. Put it aside."},
+    {sp:"raj", en:"Should I throw or keep for checking?"},
+    {sp:"kazu", en:"Keep aside, don't throw. We report to supervisor."}
+  ],
+  patternEn: "Put it aside.",
+  patternJp: "脇によけておいて",
+  patternNote: "不良品を見つけたときに、捨てずに保管しておく指示。品質管理では「捨てない」がとても重要です。",
+  vocab: [["defective","不良の"],["aside","脇に"],["supervisor","監督者"],["report","報告する"]],
+  quiz: {q:"不良品を見つけたらどうする？",opts:["すぐ捨てる","脇によけて報告する","そのまま使う"],a:1}
+},
+{
+  title: "休憩時間・シフト交代",
+  dialogue: [
+    {sp:"kazu", en:"Break time is 12 to 1. You can go now."},
+    {sp:"raj", en:"Thank you sir. After break, same place?"},
+    {sp:"kazu", en:"Yes, same station. Next shift comes at 2."},
+    {sp:"raj", en:"Understood, I will be back sharp."}
+  ],
+  patternEn: "Break time is ~ to ~.",
+  patternJp: "休憩時間は〜から〜までです",
+  patternNote: "時間を伝える基本パターン。sharp（きっかり）を添えると「時間厳守」のニュアンスが出ます。",
+  vocab: [["break","休憩"],["station","持ち場"],["shift","シフト"],["sharp","きっかり"]],
+  quiz: {q:"\"I will be back sharp.\" の意味は？",opts:["だいたい戻ります","きっかりの時間に戻ります","戻りません"],a:1}
+},
+{
+  title: "遅刻・欠勤の連絡",
+  dialogue: [
+    {sp:"raj", en:"Sir, sorry, I am getting late today, traffic is heavy only."},
+    {sp:"kazu", en:"Ok, thanks for telling. How much time more?"},
+    {sp:"raj", en:"Maybe twenty minutes more, sorry for inconvenience."},
+    {sp:"kazu", en:"No problem, drive safe."}
+  ],
+  patternEn: "I am getting late, [理由].",
+  patternJp: "遅れそうです、〜なので",
+  patternNote: "遅刻連絡の基本フレーズ。理由をシンプルに付け加えるだけで十分に伝わります。",
+  vocab: [["traffic","渋滞"],["inconvenience","迷惑"],["drive safe","安全運転で"]],
+  quiz: {q:"遅刻連絡で最も大事なことは？",opts:["理由を長々説明する","早めに連絡する","何も言わない"],a:1}
+},
+{
+  title: "トラブル・機械故障の報告",
+  dialogue: [
+    {sp:"raj", en:"Sir! Machine is making strange sound, and stopping suddenly!"},
+    {sp:"kazu", en:"Don't touch anything. Press the emergency stop."},
+    {sp:"raj", en:"Already pressed sir, smoke also little bit coming."},
+    {sp:"kazu", en:"Ok, step back, I am calling maintenance now."}
+  ],
+  patternEn: "Don't touch anything.",
+  patternJp: "何も触らないで",
+  patternNote: "緊急時にまず言うべき安全確保のフレーズ。パニックのときほどシンプルな命令文が有効です。",
+  vocab: [["strange sound","異音"],["suddenly","急に"],["maintenance","保守・整備"]],
+  quiz: {q:"機械から煙が出たら最初にすべきことは？",opts:["写真を撮る","緊急停止ボタンを押す","そのまま様子を見る"],a:1}
+},
+{
+  title: "在庫・搬入搬出の指示",
+  dialogue: [
+    {sp:"kazu", en:"New boxes are coming today, please clear this space."},
+    {sp:"raj", en:"This shelf, or that one near door?"},
+    {sp:"kazu", en:"Near door. Stack them not more than five high."},
+    {sp:"raj", en:"Ok, five box height maximum, noted."}
+  ],
+  patternEn: "Not more than ~.",
+  patternJp: "〜以上にはしないで",
+  patternNote: "上限を伝える表現。安全のための積み上げ制限などによく使われます。",
+  vocab: [["shelf","棚"],["stack","積む"],["maximum","最大"]],
+  quiz: {q:"箱は最大何段まで積んでいい？",opts:["3段","5段","制限なし"],a:1}
+},
+{
+  title: "衛生管理",
+  dialogue: [
+    {sp:"kazu", en:"Always wash hands before entering the production area."},
+    {sp:"raj", en:"Even after wearing gloves also, sir?"},
+    {sp:"kazu", en:"Yes, gloves protect product, hands must be clean first."},
+    {sp:"raj", en:"Ok understood, hygiene is very important here."}
+  ],
+  patternEn: "Always ~ before entering ...",
+  patternJp: "…に入る前は必ず〜してください",
+  patternNote: "衛生ルールを伝える基本パターン。「必ず」を表す always がポイントです。",
+  vocab: [["production area","製造区域"],["hygiene","衛生"],["protect","守る"]],
+  quiz: {q:"手袋をしていれば手を洗わなくてよい？",opts:["よい","だめ、必ず洗う","場合による"],a:1}
+},
+{
+  title: "シフト表・給料についての質問",
+  dialogue: [
+    {sp:"raj", en:"Sir, one doubt, this month salary date is same as before?"},
+    {sp:"kazu", en:"Yes, 25th same as usual. Check your shift table too."},
+    {sp:"raj", en:"I saw, but next week shift is not clear only."},
+    {sp:"kazu", en:"I'll update it today, don't worry."}
+  ],
+  patternEn: "One doubt, ~?",
+  patternJp: "一つ疑問があるのですが〜？",
+  patternNote: "質問を切り出すときの丁寧な前置き表現。現場で非常によく使われます。標準英語では doubt は「疑い」という意味ですが、Indian Englishでは「question（質問）」の意味でよく使われます。文法の間違いではなく、実際の現場でとてもよく耳にする自然な言い回しです。",
+  vocab: [["salary","給料"],["shift table","シフト表"],["update","更新する"]],
+  quiz: {q:"給料日はいつ？",opts:["月末","25日","月初"],a:1}
+},
+{
+  title: "雑談・関係づくり",
+  dialogue: [
+    {sp:"kazu", en:"Rajibu, what do you usually eat for lunch?"},
+    {sp:"raj", en:"Sir, mostly rice and dal, sometimes curry only."},
+    {sp:"kazu", en:"Sounds nice. Where are you from in India?"},
+    {sp:"raj", en:"I am from Gujarat, small town near Ahmedabad."}
+  ],
+  patternEn: "What do you usually ~?",
+  patternJp: "普段〜しますか？",
+  patternNote: "雑談で相手のことを知るための定番の質問パターン。人間関係づくりに役立ちます。",
+  vocab: [["dal","豆カレー"],["curry","カレー"],["hometown","出身地"]],
+  quiz: {q:"ラジブの出身は？",opts:["Ahmedabad近くの町","Delhi","Mumbai"],a:0}
+},
+{
+  title: "緊急時対応",
+  dialogue: [
+    {sp:"kazu", en:"Everyone stop work! There's a fire alarm, evacuate now!"},
+    {sp:"raj", en:"Sir, which exit, this side or that side?"},
+    {sp:"kazu", en:"This side, follow the green light signs. Don't run."},
+    {sp:"raj", en:"Ok, walking fast, not running, understood."}
+  ],
+  patternEn: "Evacuate now!",
+  patternJp: "今すぐ避難して！",
+  patternNote: "緊急時の命令文。短く強い表現で全員にすぐ伝わるようにします。",
+  vocab: [["fire alarm","火災警報"],["evacuate","避難する"],["exit","出口"],["green light signs","避難誘導灯"]],
+  quiz: {q:"避難するときは走ってもいい？",opts:["走ってよい","走らず速歩きで","立ち止まる"],a:1}
+}
+];
+
+let currentLesson = null;
+let quizAnswered = false;
+
+function renderSceneList() {
+  const grid = document.getElementById('sceneList');
+  grid.innerHTML = '';
+  const doneMap = JSON.parse(localStorage.getItem('genbaDone') || '{}');
+  LESSONS.forEach((l, i) => {
+    const locked = !canAccess() && i > 0;
+    const btn = document.createElement('div');
+    btn.className = 'scene-btn' + (locked ? ' locked' : '');
+    btn.innerHTML = `<div class="scene-num">SCENE ${i+1}</div><div class="scene-title">${l.title}</div>${doneMap[i] ? '<div class="scene-done">✓ 完了</div>' : ''}`;
+    btn.onclick = () => openLesson(i);
+    grid.appendChild(btn);
+  });
+}
+
+function openLesson(i) {
+  if (!canAccess() && i > 0) {
+    showUnlockOverlay();
+    return;
+  }
+  currentLesson = i;
+  quizAnswered = false;
+  const l = LESSONS[i];
+  document.getElementById('sceneList').style.display = 'none';
+  const view = document.getElementById('lessonView');
+  view.style.display = 'block';
+
+  let dialogueHtml = l.dialogue.map((d, li) => `
+    <div class="line">
+      <div class="avatar ${d.sp}">${d.sp === 'kazu' ? 'カズ' : 'ラジブ'}</div>
+      <div class="line-body">
+        <div class="line-name">${d.sp === 'kazu' ? 'カズ（先輩）' : 'ラジブ（新人）'}</div>
+        <div class="line-en">${d.en}<button class="speak-btn" onclick="speak(this.dataset.text,this)" data-text="${d.en.replace(/"/g,'&quot;')}" data-gender="${d.sp}" data-audio-id="genba_scene${i+1}_line${li+1}">🔊</button></div>
+      </div>
+    </div>`).join('');
+
+  let vocabHtml = l.vocab.map((v, vi) => `<div class="vocab-item"><span><span class="vocab-en">${v[0]}</span><button class="vocab-speak-btn" onclick="speak(this.dataset.text,this)" data-text="${v[0].replace(/"/g,'&quot;')}" data-gender="kazu" data-audio-id="genba_scene${i+1}_vocab${vi+1}">🔊</button></span><span class="vocab-jp">${v[1]}</span></div>`).join('');
+
+  view.innerHTML = `
+    <button class="back-btn" onclick="closeLesson()">← シーン一覧に戻る</button>
+    <div class="lesson-title">SCENE ${i+1}：${l.title}</div>
+    <div class="dialogue-box">${dialogueHtml}</div>
+    <div class="section-block">
+      <div class="section-label">パターンボックス</div>
+      <div class="pattern-en">"${l.patternEn}"</div>
+      <div class="pattern-jp">${l.patternJp}</div>
+      <div class="pattern-note">${l.patternNote}</div>
+    </div>
+    <div class="section-block">
+      <div class="section-label">単語リスト</div>
+      ${vocabHtml}
+    </div>
+    <div class="section-block">
+      <div class="section-label">クイズ</div>
+      <div class="quiz-q">${l.quiz.q}</div>
+      <div id="quizOpts"></div>
+      <div id="quizResult" class="quiz-result"></div>
+    </div>
+    <button class="back-btn" onclick="closeLesson()">← シーン一覧に戻る</button>
+  `;
+
+  const optsDiv = document.getElementById('quizOpts');
+  l.quiz.opts.forEach((opt, idx) => {
+    const b = document.createElement('button');
+    b.className = 'quiz-opt';
+    b.textContent = opt;
+    b.onclick = () => answerQuiz(idx, b);
+    optsDiv.appendChild(b);
+  });
+
+  window.scrollTo(0, 0);
+}
+
+function answerQuiz(idx, btn) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  const l = LESSONS[currentLesson];
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts.forEach((o, i) => {
+    if (i === l.quiz.a) o.classList.add('correct');
+    else if (i === idx) o.classList.add('wrong');
+  });
+  document.getElementById('quizResult').textContent = idx === l.quiz.a ? '🎉 正解！' : '❌ 不正解。正しい答えを確認しましょう。';
+
+  const doneMap = JSON.parse(localStorage.getItem('genbaDone') || '{}');
+  doneMap[currentLesson] = true;
+  localStorage.setItem('genbaDone', JSON.stringify(doneMap));
+}
+
+function closeLesson() {
+  document.getElementById('lessonView').style.display = 'none';
+  document.getElementById('sceneList').style.display = 'grid';
+  renderSceneList();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initTrial();
+  renderSceneList();
+  showTrialBanner();
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('unlock') === 'yes') {
+    localStorage.setItem(UNLOCK_STORAGE_KEY, 'true');
+    showTrialBanner();
+  }
+  if (params.get('unlock') === 'bundle') {
+    localStorage.setItem(BUNDLE_UNLOCK_KEY, 'true');
+    showTrialBanner();
+  }
+});
+</script>
+</body>
+</html>
