@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>はじめての現場英会話｜学びのミカタ</title>
+<meta name="description" content="製造・現場で働く方のための実践英会話。会話と聞き取りで、現場のフレーズを練習。">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --c:#1cb0f6;--cd:#1899d6;--cl:#ddf4ff;
+ --ink:#3c3c3c;--body:#4b4b4b;--mute:#777;--line:#e5e5e5;--bg2:#f7f7f7;
+ --green:#58cc02;--green-d:#58a700;--green-l:#d7ffb8;--red:#ff4b4b;--red-d:#ea2b2b;--red-l:#ffdfe0;
+ --blue:#1cb0f6;--blue-d:#1899d6;--sun:#ffc800;--sun-d:#e5a500;
+ --round:'M PLUS Rounded 1c','BIZ UDPGothic',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:#fff}
+body{font-family:'BIZ UDPGothic','Hiragino Sans','Noto Sans JP',sans-serif;color:var(--body);font-weight:700;line-height:1.7;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+a{color:inherit}
+.ic{width:1em;height:1em;display:inline-block;vertical-align:-.13em;flex-shrink:0}
+.app{max-width:560px;margin:0 auto;padding:0 16px 120px;min-height:100vh}
+.scr{display:none}.scr.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h1,h2,h3,.rd{font-family:var(--round);font-weight:800;color:var(--ink)}
+/* 体験バナー */
+.trial{display:none;align-items:center;gap:10px;background:#fff4d6;border:2px solid #ffe1a1;color:#9a5b00;border-radius:14px;padding:8px 8px 8px 14px;margin:12px 0 0;font-size:13px}
+.trial.on{display:flex}
+.trial button{margin-left:auto;background:var(--sun);color:#3c3c3c;border-radius:12px;padding:7px 14px;box-shadow:0 4px 0 var(--sun-d);font-family:var(--round);font-weight:800;font-size:13px;white-space:nowrap}
+/* 上のバー */
+.top{display:flex;align-items:center;gap:10px;padding:14px 0 8px}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--round);font-weight:800;font-size:20px;box-shadow:0 3px 0 var(--cd);flex-shrink:0}
+.top h1{font-size:19px;line-height:1.2}
+.top h1 small{display:block;font-size:11px;color:var(--mute);font-family:'BIZ UDPGothic',sans-serif;font-weight:700}
+.stat{margin-left:auto;display:flex;gap:6px}
+.chip{display:flex;align-items:center;gap:5px;border:2px solid var(--line);border-radius:12px;padding:4px 10px;font-family:var(--round);font-weight:800;font-size:15px;color:var(--ink)}
+.chip .ic{font-size:18px}
+.chip.fire .ic{color:#ff9600}.chip.star .ic{color:var(--sun)}
+/* 学年タブ */
+.gtabs{display:flex;gap:8px;padding:8px 2px 10px;overflow-x:auto;scrollbar-width:none}.gtabs::-webkit-scrollbar{display:none}
+.gtab{flex:1 0 auto;min-width:76px;background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:8px 4px 6px;text-align:center}
+.gtab b{display:block;font-family:var(--round);font-weight:800;font-size:17px;color:var(--ink);line-height:1.3}
+.gtab i{display:block;font-style:normal;font-size:11px;color:var(--mute)}
+.gtab.on{background:var(--c);border-color:var(--cd)}
+.gtab.on b,.gtab.on i{color:#fff}
+.gtab:active,.btn:active,.opt:active,.chip:active{transform:translateY(2px)}
+/* ユニット帯 */
+.band{background:var(--c);color:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 4px 0 var(--cd);margin:4px 0 4px;display:flex;align-items:center;gap:12px}
+.band small{display:block;font-size:12px;opacity:.92}
+.band b{display:block;font-family:var(--round);font-weight:800;font-size:19px;line-height:1.35;margin:2px 0 4px}
+.band span{font-size:12px;opacity:.95}
+.band .go{margin-left:auto;flex-shrink:0;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center}
+/* 学習の道 */
+.path{display:flex;flex-direction:column;align-items:center;padding:56px 0 16px;gap:12px}
+.nrow{position:relative;display:flex;flex-direction:column;align-items:center;transform:translateX(var(--x));width:200px}
+.node{width:72px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--round);font-weight:800;font-size:24px;position:relative}
+.node.todo{background:#e5e5e5;color:#afafaf;box-shadow:0 7px 0 #cecece}
+.node.cur{background:var(--c);box-shadow:0 7px 0 var(--cd);outline:6px solid var(--cl);outline-offset:4px}
+.node.done{background:var(--c);box-shadow:0 7px 0 var(--cd)}
+.node.gold{background:var(--sun);box-shadow:0 7px 0 var(--sun-d)}
+.node:active{transform:translateY(5px);box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.node .ic{font-size:30px}
+.bub{position:absolute;top:-46px;background:#fff;color:var(--c);border:2px solid var(--line);border-radius:12px;padding:5px 12px;font-family:var(--round);font-weight:800;font-size:14px;white-space:nowrap;animation:bob 1.6s ease-in-out infinite;z-index:2}
+.bub::after{content:'';position:absolute;left:50%;bottom:-8px;width:12px;height:12px;background:#fff;border-right:2px solid var(--line);border-bottom:2px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.nst{display:flex;gap:2px;margin-top:11px;font-size:14px;color:#e5e5e5}.nst .on{color:var(--sun)}
+.nt{font-size:13px;color:var(--ink);text-align:center;line-height:1.4;margin-top:1px}
+.nt small{display:block;color:var(--mute);font-size:11px}
+/* 下ナビ */
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:2px solid var(--line);display:none;justify-content:center;gap:4px;padding:6px 10px calc(8px + env(safe-area-inset-bottom))}
+body.navon .bnav{display:flex}
+.bnav button,.bnav a{flex:1;max-width:150px;border:2px solid transparent;border-radius:14px;padding:5px 4px;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:12px;color:var(--mute);text-decoration:none;font-family:var(--round);font-weight:800;position:relative}
+.bnav .bi{font-size:24px;line-height:1;color:#afafaf}
+.bnav .on{border-color:#84d8ff;background:#ddf4ff;color:var(--blue-d)}.bnav .on .bi{color:var(--blue)}
+.bnav .badge{position:absolute;top:0;right:24%;background:var(--red);color:#fff;border-radius:10px;font-size:10px;padding:0 6px;line-height:18px}
+/* 共通ボタン */
+.btn{display:block;width:100%;border-radius:16px;padding:14px;font-family:var(--round);font-weight:800;font-size:17px;letter-spacing:.04em;text-align:center;text-decoration:none}
+.btn.pri{background:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
+.btn.sub{background:#fff;border:2px solid var(--line);border-bottom-width:4px;color:var(--blue-d)}
+.btn.dis{background:#e5e5e5;color:#afafaf;box-shadow:0 4px 0 #cecece}
+.xbar{display:flex;align-items:center;gap:12px;padding:16px 0 10px}
+.xbtn{font-size:26px;color:#afafaf;display:flex}
+.pbar{flex:1;height:16px;background:#e5e5e5;border-radius:8px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--green);border-radius:8px;transition:width .35s;box-shadow:inset 0 -5px 0 rgba(0,0,0,.08)}
+/* ポイント */
+.lh{margin:8px 0 14px}
+.lh small{color:var(--c);font-size:13px;font-family:var(--round);font-weight:800}
+.lh h2{font-size:24px;line-height:1.35}
+.lh p{color:var(--mute);font-size:14px}
+.card{border:2px solid var(--line);border-radius:18px;padding:16px 16px 14px;margin-bottom:14px;background:#fff}
+.card h3{font-size:15px;color:var(--c);display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.card h3 .ic{font-size:19px}
+.pts{list-style:none}
+.pts li{position:relative;padding:7px 0 7px 22px;font-size:16px;color:var(--ink);line-height:1.75;border-top:1px dashed var(--line)}
+.pts li:first-child{border-top:0}
+.pts li::before{content:'';position:absolute;left:3px;top:17px;width:9px;height:9px;border-radius:3px;background:var(--c)}
+.pts b,.exa b{background:linear-gradient(transparent 58%,var(--cl) 58%);color:var(--ink)}
+.fig{width:100%;height:auto;display:block;margin:4px 0 2px}
+.fig .ax{stroke:#afafaf;stroke-width:2;fill:none}.fig .axf{fill:#afafaf}
+.fig .ln{stroke:var(--c);stroke-width:4;fill:none;stroke-linecap:round}
+.fig .ln2{stroke:var(--blue);stroke-width:4;fill:none;stroke-linecap:round}
+.fig .ln3{stroke:var(--green);stroke-width:3;fill:none}
+.fig .frame{stroke:#cfcfcf;stroke-width:2.5;fill:none}.fig .frame2{stroke:var(--ink);stroke-width:2.5;fill:none}
+.fig .fill{fill:var(--cl)}
+.fig .pt{fill:var(--c)}.fig .pt2{fill:var(--blue)}
+.fig .boxa{fill:var(--c)}.fig .boxb{fill:var(--blue)}
+.fig .lb{font:700 13px 'BIZ UDPGothic',sans-serif;fill:var(--ink)}
+.fig .c{text-anchor:middle}.fig .w{fill:#fff}.fig .sm{font-size:11px}.fig .s2{fill:var(--blue-d)}.fig .s3{fill:var(--green-d)}
+.exq{font-size:16px;color:var(--ink);line-height:1.75}
+.exa{list-style:none;counter-reset:s;margin-top:10px;display:none}
+.exa.on{display:block}
+.exa li{counter-increment:s;position:relative;padding:6px 0 6px 34px;font-size:15px;color:var(--ink);line-height:1.7}
+.exa li::before{content:counter(s);position:absolute;left:0;top:7px;width:24px;height:24px;border-radius:50%;background:var(--bg2);border:2px solid var(--line);font-size:12px;line-height:20px;text-align:center;color:var(--mute)}
+.exa li:last-child{color:var(--c)}
+.reveal{margin-top:12px;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:9px;width:100%;color:var(--blue-d);font-family:var(--round);font-weight:800}
+/* ===== ゲーム要素 ===== */
+.goal{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-bottom-width:4px;border-radius:18px;padding:12px 14px;margin:4px 0 6px}
+.ring{position:relative;width:60px;height:60px;flex-shrink:0}
+.ring svg{width:60px;height:60px;transform:rotate(-90deg)}
+.ring .bg{stroke:#eee;stroke-width:7;fill:none}.ring .fg{stroke:#ff9600;stroke-width:7;fill:none;stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)}
+.ring .ic{position:absolute;inset:0;margin:auto;font-size:26px;color:#d6d6d6}
+.ring:not(.done) .ic path+path{display:none}
+.ring.done .ic{color:#ff9600;animation:flame 1.2s ease-in-out infinite}
+@keyframes flame{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.gtxt{flex:1;min-width:0}
+.gtxt small{display:block;font-size:12px;color:var(--mute)}
+.gtxt b{display:block;font-family:var(--round);font-weight:800;font-size:16px;color:var(--ink);line-height:1.35}
+.lvl{display:flex;align-items:center;gap:8px;margin-top:6px}
+.lvl em{font-style:normal;font-family:var(--round);font-weight:800;font-size:12px;color:#fff;background:var(--c);border-radius:8px;padding:1px 8px;box-shadow:0 2px 0 var(--cd);white-space:nowrap}
+.lvl .lb{flex:1;height:10px;background:#eee;border-radius:5px;overflow:hidden}
+.lvl .lb i{display:block;height:100%;background:var(--c);border-radius:5px;transition:width .8s}
+.lvl span{font-size:11px;color:var(--mute);white-space:nowrap}
+.chip.fire.off .ic{color:#d0d0d0}
+.sfx{font-size:22px;color:#afafaf;display:flex}
+.combo{height:0;position:relative}
+.combo b{position:absolute;right:0;top:-2px;font-family:var(--round);font-weight:800;font-size:15px;color:#ff9600;background:#fff4e0;border:2px solid #ffd59e;border-radius:12px;padding:2px 12px;animation:cpop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes cpop{from{transform:scale(.4);opacity:0}}
+.opt.ok{animation:okpop .4s cubic-bezier(.2,1.6,.4,1)}
+@keyframes okpop{40%{transform:scale(1.04)}}
+.opt.ng{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.xpgain{font-family:var(--round);font-weight:800;font-size:22px;color:#ff9600;margin:14px 0 2px}
+.xpgain small{display:block;font-size:12px;color:var(--mute);font-family:'BIZ UDPGothic',sans-serif}
+.resgoal{margin:14px 0 4px;text-align:left}
+.gdone{display:inline-flex;align-items:center;gap:6px;background:#fff4e0;color:#cc7700;border-radius:12px;padding:4px 12px;font-family:var(--round);font-weight:800;font-size:14px;margin-top:8px;animation:cpop .5s .4s backwards}
+.lvup{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:120;padding:24px}
+.lvup.on{display:flex}
+.lvbox{background:#fff;border-radius:24px;padding:28px 22px 20px;text-align:center;max-width:340px;width:100%;animation:cpop .5s cubic-bezier(.2,1.6,.4,1)}
+.lvring{width:120px;height:120px;border-radius:50%;margin:0 auto 12px;background:var(--c);box-shadow:0 6px 0 var(--cd),0 0 0 10px var(--cl);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--round);font-weight:800}
+.lvring small{font-size:12px;letter-spacing:.15em;opacity:.9}.lvring b{font-size:52px;line-height:1}
+.lvbox h3{font-size:22px}.lvbox p{color:var(--mute);font-size:14px;margin:4px 0 16px}
+.cf{position:fixed;top:-12px;width:9px;height:14px;border-radius:2px;z-index:130;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(var(--r))}}
+/* ===== テスト前チェック ===== */
+.tlead{font-size:13px;color:var(--mute);margin:2px 0 6px}
+.tsel{display:grid;gap:8px;margin:4px 0 14px}
+.tall{justify-self:end;font-size:13px;color:var(--blue-d);font-family:var(--round);font-weight:800;padding:4px 6px}
+.tu{display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:10px 14px;cursor:pointer}
+.tu input{display:none}
+.tbox{width:28px;height:28px;border-radius:8px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:transparent;font-size:18px;flex-shrink:0}
+.tu.on{border-color:var(--c);background:var(--cl)}.tu.on .tbox{background:var(--c);border-color:var(--c);color:#fff}
+.tt{font-size:15px;color:var(--ink);line-height:1.4}.tt small{display:block;font-size:11px;color:var(--mute)}
+.tsum{border:2px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.tsum.off{opacity:.5}.tsum small{display:block;font-size:12px;color:var(--mute)}.tsum b{font-family:var(--round);font-weight:800;color:var(--ink)}
+.tclear{font-size:13px;color:var(--mute);padding:6px;text-decoration:underline}
+.ckcount{font-family:var(--round);font-weight:800;font-size:14px;color:var(--ink);white-space:nowrap}
+.cktools{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px}
+.cktools button{display:flex;align-items:center;gap:4px;border:2px solid var(--line);border-radius:12px;padding:5px 12px;font-size:13px;color:var(--ink)}
+.cktools button.on{border-color:var(--c);background:var(--cl)}
+.ckg{margin-bottom:16px}.ckg h3{font-size:14px;color:var(--c);margin-bottom:6px}
+.ckl{list-style:none;display:grid;gap:8px}
+.ck{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff}
+.ckb{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);color:transparent;display:flex;align-items:center;justify-content:center;font-size:18px;margin-top:1px}
+.ck.done{background:#f3fce9;border-color:#bfe9a0}.ck.done .ckb{background:var(--green);border-color:var(--green);color:#fff}
+.ckq{flex:1;cursor:pointer;min-width:0}
+.ckq b{display:block;font-size:15px;color:var(--ink);line-height:1.55}
+.cka{display:none;font-size:15px;color:var(--c);margin-top:4px;line-height:1.55;font-weight:700}
+.ckh{display:block;font-style:normal;font-size:11px;color:#afafaf;margin-top:2px}
+.ck.open .cka{display:block}.ck.open .ckh{display:none}
+.ckcard{border-color:var(--cl);background:linear-gradient(#fff,#fff) padding-box}
+/* 会話 */
+.chat{display:grid;gap:12px}
+.cl{display:flex;gap:10px;align-items:flex-start}
+.cl.r{flex-direction:row-reverse}
+.av{width:38px;height:38px;border-radius:50%;color:#fff;font-family:var(--round);font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+.cb{max-width:82%}.cl.r .cb{text-align:right}.cl.r .cj{text-align:left}
+.cb small{display:block;font-size:11px;color:var(--mute);margin:0 4px 2px}
+.ce{display:inline-flex;align-items:flex-start;gap:8px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:9px 10px 9px 14px;text-align:left;font-size:16px;color:var(--ink);line-height:1.5;font-family:'BIZ UDPGothic',sans-serif}
+.cl.r .ce{background:var(--cl);border-color:var(--cl)}
+.cj{font-size:12.5px;color:var(--mute);margin:3px 6px 0;line-height:1.5}
+.spk.sm{width:32px;height:32px;border-radius:10px;font-size:16px;box-shadow:0 2px 0 var(--blue-d)}
+.playall{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--blue-d);border:2px solid var(--line);border-radius:10px;padding:3px 10px;font-family:var(--round);font-weight:800}
+/* 例文 */
+.sen{list-style:none}
+.sen li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.sen li:first-child{border-top:0}
+.sen .en{display:block;font-size:17px;color:var(--ink);line-height:1.5;font-family:'BIZ UDPGothic',sans-serif}
+.sen .ja{display:block;font-size:13px;color:var(--mute);line-height:1.5;margin-top:2px}
+.spk{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:var(--blue);color:#fff;box-shadow:0 3px 0 var(--blue-d);display:inline-flex;align-items:center;justify-content:center;font-size:20px}
+.spk:active{transform:translateY(2px);box-shadow:none}
+.spk.big{width:64px;height:64px;border-radius:18px;font-size:32px;display:flex;margin:0 0 14px;box-shadow:0 5px 0 var(--blue-d)}
+.qtext .en{font-family:'BIZ UDPGothic',sans-serif}
+/* 分数 */
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.15;margin:0 .12em;font-size:.92em}
+.fr>span:first-child{border-bottom:1.6px solid currentColor;padding:0 .18em}
+.fr>span:last-child{padding:0 .18em}
+/* 問題 */
+.qtag.adv{color:#fff;background:var(--c);border-color:var(--c)}
+.qtag{display:inline-block;font-size:12px;color:var(--c);border:2px solid var(--cl);border-radius:10px;padding:1px 10px;margin:4px 0 10px;font-family:var(--round);font-weight:800}
+.qtext{font-size:20px;color:var(--ink);line-height:1.7;min-height:64px;margin-bottom:16px}
+.opts{display:grid;gap:10px}
+.opt{border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:13px 16px;font-size:17px;color:var(--ink);text-align:left;display:flex;align-items:center;gap:12px;min-height:58px;line-height:1.5}
+.opt .k{flex-shrink:0;width:28px;height:28px;border:2px solid var(--line);border-radius:8px;font-size:13px;display:flex;align-items:center;justify-content:center;color:var(--mute)}
+.opt.sel{border-color:#84d8ff;background:#ddf4ff}
+.opt.ok{border-color:var(--green);background:var(--green-l);color:var(--green-d)}
+.opt.ng{border-color:var(--red);background:var(--red-l);color:var(--red-d)}
+.opt:disabled{cursor:default}
+.qfoot{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:2px solid var(--line);padding:14px 16px calc(14px + env(safe-area-inset-bottom));z-index:30}
+.qfoot .in{max-width:528px;margin:0 auto}
+.qfoot.good{background:var(--green-l);border-color:transparent}.qfoot.bad{background:var(--red-l);border-color:transparent}
+.fbh{display:none;align-items:center;gap:10px;font-family:var(--round);font-weight:800;font-size:20px;margin-bottom:4px}
+.fbh .ic{font-size:28px;background:#fff;border-radius:50%;padding:4px;width:36px;height:36px}
+.good .fbh{display:flex;color:var(--green-d)}.bad .fbh{display:flex;color:var(--red-d)}
+.fbx{display:none;font-size:14px;line-height:1.7;margin-bottom:12px;color:var(--ink)}
+.good .fbx,.bad .fbx{display:block}
+.bad .fbx b{color:var(--red-d)}
+.good .btn.pri{background:var(--green)}.bad .btn.pri{background:var(--red);box-shadow:0 4px 0 var(--red-d)}
+#sQuiz{padding-bottom:220px}
+/* 結果 */
+.res{text-align:center;padding:30px 0 10px}
+.res h2{font-size:26px;margin:10px 0 4px}
+.res p{color:var(--mute);font-size:14px}
+.bigst{display:flex;justify-content:center;gap:8px;font-size:56px;color:#e5e5e5;margin-top:6px}
+.bigst .on{color:var(--sun);animation:pop .45s backwards}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+.scores{display:flex;gap:10px;margin:22px 0}
+.sbox{flex:1;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.sbox small{display:block;background:var(--c);color:#fff;font-size:12px;padding:3px;font-family:var(--round);font-weight:800}
+.sbox.g small{background:var(--green)}
+.sbox b{display:block;font-family:var(--round);font-weight:800;font-size:24px;color:var(--ink);padding:8px}
+.miss{text-align:left}
+.miss li{list-style:none;border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:8px;font-size:14px;color:var(--ink)}
+.miss li>span{display:block;color:var(--green-d);margin-top:2px}
+.stack{display:grid;gap:12px;margin-top:16px}
+/* 復習 */
+.empty{text-align:center;color:var(--mute);padding:40px 10px}
+.empty .ic{font-size:48px;color:var(--green);margin-bottom:10px}
+.rvl li{list-style:none;border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:8px;font-size:14px;color:var(--ink)}
+.rvl small{display:block;color:var(--c);font-size:11px}
+/* 購入 */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:100;padding:16px}
+.ov.on{display:flex}
+.ovb{background:#fff;border-radius:22px;padding:24px 20px 20px;max-width:440px;width:100%;text-align:center}
+.ovb h3{font-size:20px;margin:6px 0 6px}
+.ovb p{font-size:14px;color:var(--mute);margin-bottom:16px;line-height:1.7}
+.ovb .lk{font-size:44px;color:var(--c)}
+.ovb .stack{margin-top:0}
+.btn.set{background:var(--sun);color:#3c3c3c;box-shadow:0 4px 0 var(--sun-d)}
+.btn.buy{background:var(--blue);color:#fff;box-shadow:0 4px 0 var(--blue-d)}
+.hint{position:fixed;left:16px;right:16px;bottom:84px;background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;padding:12px 14px;z-index:60;font-size:12.5px;color:var(--ink);display:flex;gap:10px;align-items:center;max-width:528px;margin:0 auto}
+body:not(.home) .hint,body:not(.home) .trial{display:none}
+.hint button{color:#afafaf;font-size:20px;display:flex}
+@media (min-width:600px){.qtext{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="app">
+ <div class="trial" id="trial"><span id="trialText"></span><button onclick="openBuy()">購入する</button></div>
+
+ <!-- ホーム -->
+ <section class="scr" id="sHome">
+  <div class="top">
+   <div class="logo">現</div>
+   <h1><small>学びのミカタ 社会人・はじめての</small>現場英会話</h1>
+   <div class="stat"><div class="chip fire" title="連続学習日数"><span data-ic="fire"></span><span id="streak">0</span></div><div class="chip star" title="あつめた星"><span data-ic="star"></span><span id="stars">0</span></div></div>
+  </div>
+  <div class="goal" id="goal"></div>
+  <div class="gtabs" id="gtabs"></div>
+  <div class="band" id="band"></div>
+  <div class="path" id="path"></div>
+ </section>
+
+ <!-- ポイント -->
+ <section class="scr" id="sPoint">
+  <div class="xbar"><button class="xbtn" onclick="go('sHome')" aria-label="とじる"><span data-ic="x"></span></button><div class="pbar"><i style="width:8%"></i></div></div>
+  <div class="lh"><small id="pTag"></small><h2 id="pTitle"></h2><p id="pSub"></p></div>
+  <div class="card" id="chatCard"><h3><span data-ic="chat"></span>会話<button class="playall" onclick="playAll()"><span data-ic="play"></span>通して聞く</button></h3><div class="chat" id="chatList"></div></div>
+  <div class="card"><h3><span data-ic="bulb"></span>ポイント</h3><div id="pFig"></div><ul class="pts" id="pList"></ul></div>
+  <div class="card" id="senCard"><h3><span data-ic="chat"></span><span id="senTitle">例文</span></h3><ul class="sen" id="senList"></ul></div>
+  <div class="card ckcard" id="ckCard"><h3><span data-ic="clip"></span>ここだけはチェック</h3><ul class="ckl" id="ckUnit"></ul></div>
+  <div class="card" id="exCard"><h3><span data-ic="pencil"></span>例題</h3><div class="exq" id="exQ"></div><ol class="exa" id="exA"></ol><button class="reveal" id="exBtn" onclick="showEx()">解き方を見る</button></div>
+  <button class="btn pri" id="startBtn" onclick="startQuiz()">問題をとく</button>
+ </section>
+
+ <!-- 問題 -->
+ <section class="scr" id="sQuiz">
+  <div class="xbar"><button class="xbtn" onclick="quitQuiz()" aria-label="やめる"><span data-ic="x"></span></button><div class="pbar"><i id="qBar"></i></div><button class="sfx" id="sfxBtn" onclick="toggleSfx()" aria-label="効果音"></button></div>
+  <div class="combo" id="combo"></div>
+  <span class="qtag" id="qTag"></span>
+  <div class="qtext" id="qText"></div>
+  <div class="opts" id="opts"></div>
+  <div class="qfoot" id="qFoot"><div class="in">
+   <div class="fbh" id="fbh"></div><div class="fbx" id="fbx"></div>
+   <button class="btn dis" id="qBtn" onclick="qAction()">答えあわせ</button>
+  </div></div>
+ </section>
+
+ <!-- 結果 -->
+ <section class="scr" id="sResult"><div class="res" id="res"></div></section>
+
+ <!-- テスト前チェック -->
+ <section class="scr" id="sTest">
+  <div class="top"><div class="logo">現</div><h1><small>ここだけはおさえる</small>テスト前チェック</h1></div>
+  <div id="tst"></div>
+ </section>
+ <section class="scr" id="sCheck">
+  <div class="xbar"><button class="xbtn" onclick="go('sTest')" aria-label="もどる"><span data-ic="x"></span></button><div class="pbar"><i id="ckBar"></i></div><span class="ckcount" id="ckCount"></span></div>
+  <div class="cktools"><button id="ckOnly" onclick="ckOnly=!ckOnly;renderCheck()"></button><button onclick="ckOpenAll=!ckOpenAll;renderCheck()" id="ckOpen"></button></div>
+  <div id="ckList"></div>
+  <div class="stack" style="margin-top:18px"><button class="btn pri" onclick="startRangeTest()">この範囲から10問テスト</button><button class="btn sub" onclick="go('sTest')">範囲をえらびなおす</button></div>
+ </section>
+
+ <!-- 復習 -->
+ <section class="scr" id="sReview">
+  <div class="top"><div class="logo">現</div><h1><small>まちがえた問題</small>復習</h1></div>
+  <div id="rv"></div>
+ </section>
+</div>
+
+<nav class="bnav" id="bnav">
+ <button data-k="home" onclick="go('sHome')"><span class="bi" data-ic="home"></span>学習</button>
+ <button data-k="test" onclick="go('sTest')"><span class="bi" data-ic="clip"></span>テスト前</button>
+ <button data-k="review" onclick="go('sReview')"><span class="bi" data-ic="redo"></span>復習<span class="badge" id="rvBadge" hidden></span></button>
+ <a href="https://manabino-mikata.com/portal/"><span class="bi" data-ic="grid"></span>ほかの教科</a>
+</nav>
+
+<div class="lvup" id="lvup" onclick="this.classList.remove('on')"><div class="lvbox"><div class="lvring"><small>LEVEL</small><b id="lvNum">2</b></div><h3>レベルアップ！</h3><p id="lvMsg"></p><button class="btn pri">やったね</button></div></div>
+<div class="ov" id="ovBuy" onclick="if(event.target===this&&!trialOver())closeBuy()"><div class="ovb">
+ <div class="lk"><span data-ic="lock"></span></div>
+ <h3 id="buyTtl">続けて学習するには</h3>
+ <p id="buyMsg">買い切りで、ずっと使えます。<br>月額料金はかかりません。</p>
+ <div class="stack">
+  <a class="btn buy" href="https://buy.stripe.com/TODO_genba">はじめての現場英会話を購入する</a>
+  <a class="btn set" href="https://buy.stripe.com/fZu7sE1oQdzu41S1DU5wI01">中学生6教科セットで購入する</a>
+  <button class="btn sub" id="buyClose" onclick="closeBuy()">あとで</button>
+ </div>
+</div></div>
+
+<script>
+const APP_ID='genba';
+const UNITS=[];const ADV={};const CK={};const FEAT={"unit": "シーン", "notest": true, "nobundle": true, "people": {"kazu": {"n": "カズ", "c": "#1cb0f6", "r": 0}, "raj": {"n": "ラジブ", "c": "#ff9600", "r": 1}}};const UW=FEAT.unit||'単元';
+const AUDIO={"Rajibu, welcome to the team! I'm Kazu. I'll be training you this week.": "genba_scene1_line1", "Nice to meet you, Kazu sir. I am very much excited to be working here.": "genba_scene1_line2", "Don't worry. Just ask me if you don't understand something.": "genba_scene1_line3", "Okay, thank you. One doubt — can you please repeat that, slowly only?": "genba_scene1_line4", "Sure! I said, \"Just ask me anytime.\"": "genba_scene1_line5", "training": "genba_scene1_vocab1", "doubt": "genba_scene1_vocab2", "repeat": "genba_scene1_vocab3", "excited": "genba_scene1_vocab4", "anytime": "genba_scene1_vocab5", "Before you touch the machine, you must wear this helmet and gloves.": "genba_scene2_line1", "Okay sir. This helmet is little bit tight only.": "genba_scene2_line2", "I'll get you a bigger size. Never remove gloves near the machine.": "genba_scene2_line3", "Understood. Safety first, no compromise.": "genba_scene2_line4", "helmet": "genba_scene2_vocab1", "gloves": "genba_scene2_vocab2", "tight": "genba_scene2_vocab3", "remove": "genba_scene2_vocab4", "compromise": "genba_scene2_vocab5", "This is the start button, this is the stop button. Press slowly.": "genba_scene3_line1", "This button only, or that red one also?": "genba_scene3_line2", "Only this one. The red one is emergency stop.": "genba_scene3_line3", "Ok ok, I am understanding now.": "genba_scene3_line4", "start": "genba_scene3_vocab1", "stop": "genba_scene3_vocab2", "press": "genba_scene3_vocab3", "emergency": "genba_scene3_vocab4", "Please add five kilograms of powder into the tank.": "genba_scene4_line1", "Five kg, sir? Or five liter?": "genba_scene4_line2", "Kilograms. Weight, not volume.": "genba_scene4_line3", "Ok, I am weighing now.": "genba_scene4_line4", "kilogram": "genba_scene4_vocab1", "liter": "genba_scene4_vocab2", "weight": "genba_scene4_vocab3", "volume": "genba_scene4_vocab4", "tank": "genba_scene4_vocab5", "Sir, this one bottle is looking different color.": "genba_scene5_line1", "Show me. Yes, that's defective. Put it aside.": "genba_scene5_line2", "Should I throw or keep for checking?": "genba_scene5_line3", "Keep aside, don't throw. We report to supervisor.": "genba_scene5_line4", "defective": "genba_scene5_vocab1", "aside": "genba_scene5_vocab2", "supervisor": "genba_scene5_vocab3", "report": "genba_scene5_vocab4", "Break time is 12 to 1. You can go now.": "genba_scene6_line1", "Thank you sir. After break, same place?": "genba_scene6_line2", "Yes, same station. Next shift comes at 2.": "genba_scene6_line3", "Understood, I will be back sharp.": "genba_scene6_line4", "break": "genba_scene6_vocab1", "station": "genba_scene6_vocab2", "shift": "genba_scene6_vocab3", "sharp": "genba_scene6_vocab4", "Sir, sorry, I am getting late today, traffic is heavy only.": "genba_scene7_line1", "Ok, thanks for telling. How much time more?": "genba_scene7_line2", "Maybe twenty minutes more, sorry for inconvenience.": "genba_scene7_line3", "No problem, drive safe.": "genba_scene7_line4", "traffic": "genba_scene7_vocab1", "inconvenience": "genba_scene7_vocab2", "drive safe": "genba_scene7_vocab3", "Sir! Machine is making strange sound, and stopping suddenly!": "genba_scene8_line1", "Don't touch anything. Press the emergency stop.": "genba_scene8_line2", "Already pressed sir, smoke also little bit coming.": "genba_scene8_line3", "Ok, step back, I am calling maintenance now.": "genba_scene8_line4", "strange sound": "genba_scene8_vocab1", "suddenly": "genba_scene8_vocab2", "maintenance": "genba_scene8_vocab3", "New boxes are coming today, please clear this space.": "genba_scene9_line1", "This shelf, or that one near door?": "genba_scene9_line2", "Near door. Stack them not more than five high.": "genba_scene9_line3", "Ok, five box height maximum, noted.": "genba_scene9_line4", "shelf": "genba_scene9_vocab1", "stack": "genba_scene9_vocab2", "maximum": "genba_scene9_vocab3", "Always wash hands before entering the production area.": "genba_scene10_line1", "Even after wearing gloves also, sir?": "genba_scene10_line2", "Yes, gloves protect product, hands must be clean first.": "genba_scene10_line3", "Ok understood, hygiene is very important here.": "genba_scene10_line4", "production area": "genba_scene10_vocab1", "hygiene": "genba_scene10_vocab2", "protect": "genba_scene10_vocab3", "Sir, one doubt, this month salary date is same as before?": "genba_scene11_line1", "Yes, 25th same as usual. Check your shift table too.": "genba_scene11_line2", "I saw, but next week shift is not clear only.": "genba_scene11_line3", "I'll update it today, don't worry.": "genba_scene11_line4", "salary": "genba_scene11_vocab1", "shift table": "genba_scene11_vocab2", "update": "genba_scene11_vocab3", "Rajibu, what do you usually eat for lunch?": "genba_scene12_line1", "Sir, mostly rice and dal, sometimes curry only.": "genba_scene12_line2", "Sounds nice. Where are you from in India?": "genba_scene12_line3", "I am from Gujarat, small town near Ahmedabad.": "genba_scene12_line4", "dal": "genba_scene12_vocab1", "curry": "genba_scene12_vocab2", "hometown": "genba_scene12_vocab3", "Everyone stop work! There's a fire alarm, evacuate now!": "genba_scene13_line1", "Sir, which exit, this side or that side?": "genba_scene13_line2", "This side, follow the green light signs. Don't run.": "genba_scene13_line3", "Ok, walking fast, not running, understood.": "genba_scene13_line4", "fire alarm": "genba_scene13_vocab1", "evacuate": "genba_scene13_vocab2", "exit": "genba_scene13_vocab3", "green light signs": "genba_scene13_vocab4"};
+</script>
+<script>
+// はじめての現場英会話（もとのLESSONSから生成）
+UNITS.push(...[
+{
+"g": 1,
+"t": "初出勤・自己紹介",
+"s": "もう一度ゆっくり言ってもらえますか？",
+"chat": [
+[
+"kazu",
+"Rajibu, welcome to the team! I'm Kazu. I'll be training you this week.",
+"ラジブ、チームへようこそ！僕はカズです。今週は僕が教育係をします。"
+],
+[
+"raj",
+"Nice to meet you, Kazu sir. I am very much excited to be working here.",
+"はじめまして、カズさん。ここで働けることをとても楽しみにしています。"
+],
+[
+"kazu",
+"Don't worry. Just ask me if you don't understand something.",
+"心配しないで。分からないことがあれば何でも聞いてね。"
+],
+[
+"raj",
+"Okay, thank you. One doubt — can you please repeat that, slowly only?",
+"はい、ありがとうございます。一つ質問ですが、もう一度ゆっくり言ってもらえますか？"
+],
+[
+"kazu",
+"Sure! I said, \"Just ask me anytime.\"",
+"もちろん！「いつでも聞いて」と言ったんだよ。"
+]
+],
+"pt": [
+"**Can you please repeat that, slowly only?**　もう一度ゆっくり言ってもらえますか？",
+"ネイティブの言い方は\"Can you say that again slowly?\"ですが、repeatやonlyを使う言い方も現場ではとてもよく聞きます。意味さえ取れれば十分、という前提で聞き取り練習をしましょう。"
+],
+"sen": [
+[
+"training",
+"研修・トレーニング"
+],
+[
+"doubt",
+"疑問・質問（Indian Englishで question の意味）"
+],
+[
+"repeat",
+"繰り返す"
+],
+[
+"excited",
+"わくわくしている"
+],
+[
+"anytime",
+"いつでも"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"ラジブが「もう一度お願いします」と言うときに使った表現は？",
+"Can you please repeat that, slowly only?",
+[
+"Can you say that again?",
+"Say it one more time?"
+],
+"会話のポイントになっている表現です。「もう一度ゆっくり言ってもらえますか？」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"はじめまして、カズさん。ここで働けることをとても楽しみにしています。",
+[
+"心配しないで。分からないことがあれば何でも聞いてね。",
+"はい、ありがとうございます。一つ質問ですが、もう一度ゆっくり言ってもらえますか？",
+"大丈夫だよ、安全運転でね。"
+],
+"英文：Nice to meet you, Kazu sir. I am very much excited to be working here.",
+"Nice to meet you, Kazu sir. I am very much excited to be working here."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"はい、ありがとうございます。一つ質問ですが、もう一度ゆっくり言ってもらえますか？",
+[
+"心配しないで。分からないことがあれば何でも聞いてね。",
+"はじめまして、カズさん。ここで働けることをとても楽しみにしています。",
+"ドアの近くだよ。5段以上には積まないでね。"
+],
+"英文：Okay, thank you. One doubt — can you please repeat that, slowly only?",
+"Okay, thank you. One doubt — can you please repeat that, slowly only?"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"もちろん！「いつでも聞いて」と言ったんだよ。",
+[
+"ラジブ、チームへようこそ！僕はカズです。今週は僕が教育係をします。",
+"心配しないで。分からないことがあれば何でも聞いてね。",
+"このボタンだけですか、それとも赤いのも？"
+],
+"英文：Sure! I said, \"Just ask me anytime.\"",
+"Sure! I said, \"Just ask me anytime.\""
+],
+[
+"「training」の意味は？",
+"研修・トレーニング",
+[
+"避難誘導灯",
+"異音",
+"体積"
+],
+"training ＝ 研修・トレーニング",
+"training"
+]
+]
+},
+{
+"g": 1,
+"t": "安全ルール・保護具の指示",
+"s": "〜を着用してください",
+"chat": [
+[
+"kazu",
+"Before you touch the machine, you must wear this helmet and gloves.",
+"機械に触る前に、このヘルメットと手袋を必ず着けてください。"
+],
+[
+"raj",
+"Okay sir. This helmet is little bit tight only.",
+"分かりました。このヘルメット、ちょっときついです。"
+],
+[
+"kazu",
+"I'll get you a bigger size. Never remove gloves near the machine.",
+"もっと大きいサイズを用意するね。機械の近くでは絶対に手袋を外さないで。"
+],
+[
+"raj",
+"Understood. Safety first, no compromise.",
+"分かりました。安全第一、妥協しません。"
+]
+],
+"pt": [
+"**You must wear ...**　〜を着用してください",
+"現場の必須ルールを伝える定番表現です。must を使うことで「絶対に守るべきこと」であることが伝わります。"
+],
+"sen": [
+[
+"helmet",
+"ヘルメット"
+],
+[
+"gloves",
+"手袋"
+],
+[
+"tight",
+"きつい"
+],
+[
+"remove",
+"外す"
+],
+[
+"compromise",
+"妥協"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"「機械の近くで手袋を外さないで」という指示に合う単語は？",
+"remove",
+[
+"helmet",
+"tight"
+],
+"会話のポイントになっている表現です。「〜を着用してください」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました。このヘルメット、ちょっときついです。",
+[
+"もっと大きいサイズを用意するね。機械の近くでは絶対に手袋を外さないで。",
+"機械に触る前に、このヘルメットと手袋を必ず着けてください。",
+"ラジブ、お昼はいつも何を食べているの？"
+],
+"英文：Okay sir. This helmet is little bit tight only.",
+"Okay sir. This helmet is little bit tight only."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"もっと大きいサイズを用意するね。機械の近くでは絶対に手袋を外さないで。",
+[
+"分かりました。安全第一、妥協しません。",
+"機械に触る前に、このヘルメットと手袋を必ず着けてください。",
+"一つ質問ですが、今月の給料日はいつも通りですか？"
+],
+"英文：I'll get you a bigger size. Never remove gloves near the machine.",
+"I'll get you a bigger size. Never remove gloves near the machine."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました。安全第一、妥協しません。",
+[
+"機械に触る前に、このヘルメットと手袋を必ず着けてください。",
+"分かりました。このヘルメット、ちょっときついです。",
+"この棚ですか、それともドアの近くのですか？"
+],
+"英文：Understood. Safety first, no compromise.",
+"Understood. Safety first, no compromise."
+],
+[
+"「gloves」の意味は？",
+"手袋",
+[
+"報告する",
+"安全運転で",
+"いつでも"
+],
+"gloves ＝ 手袋",
+"gloves"
+]
+]
+},
+{
+"g": 1,
+"t": "機械の操作説明",
+"s": "これが〜のボタンです",
+"chat": [
+[
+"kazu",
+"This is the start button, this is the stop button. Press slowly.",
+"これがスタートボタン、これがストップボタンです。ゆっくり押してね。"
+],
+[
+"raj",
+"This button only, or that red one also?",
+"このボタンだけですか、それとも赤いのも？"
+],
+[
+"kazu",
+"Only this one. The red one is emergency stop.",
+"これだけだよ。赤いのは緊急停止ボタン。"
+],
+[
+"raj",
+"Ok ok, I am understanding now.",
+"分かりました、理解できました。"
+]
+],
+"pt": [
+"**This is the ~ button.**　これが〜のボタンです",
+"物を指差しながら名前を教えるときの基本パターン。現場での操作説明では欠かせません。"
+],
+"sen": [
+[
+"start",
+"始める"
+],
+[
+"stop",
+"止める"
+],
+[
+"press",
+"押す"
+],
+[
+"emergency",
+"緊急"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"「赤いボタン」は何のボタン？",
+"emergency stop",
+[
+"start button",
+"training button"
+],
+"会話のポイントになっている表現です。「これが〜のボタンです」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"このボタンだけですか、それとも赤いのも？",
+[
+"これがスタートボタン、これがストップボタンです。ゆっくり押してね。",
+"分かりました、理解できました。",
+"あと20分くらいだと思います、ご迷惑をおかけしてすみません。"
+],
+"英文：This button only, or that red one also?",
+"This button only, or that red one also?"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"これだけだよ。赤いのは緊急停止ボタン。",
+[
+"このボタンだけですか、それとも赤いのも？",
+"分かりました、理解できました。",
+"うん、手袋は製品を守るためのもの。その前に手をきれいにしないとね。"
+],
+"英文：Only this one. The red one is emergency stop.",
+"Only this one. The red one is emergency stop."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました、理解できました。",
+[
+"これだけだよ。赤いのは緊急停止ボタン。",
+"これがスタートボタン、これがストップボタンです。ゆっくり押してね。",
+"全員作業を止めて！火災警報です、今すぐ避難して！"
+],
+"英文：Ok ok, I am understanding now.",
+"Ok ok, I am understanding now."
+],
+[
+"「stop」の意味は？",
+"止める",
+[
+"避難誘導灯",
+"シフト",
+"安全運転で"
+],
+"stop ＝ 止める",
+"stop"
+]
+]
+},
+{
+"g": 1,
+"t": "数量・単位の伝達",
+"s": "〜キログラム／リットルの…を加えてください",
+"chat": [
+[
+"kazu",
+"Please add five kilograms of powder into the tank.",
+"タンクに粉末を5キログラム入れてください。"
+],
+[
+"raj",
+"Five kg, sir? Or five liter?",
+"5キロですか？それとも5リットルですか？"
+],
+[
+"kazu",
+"Kilograms. Weight, not volume.",
+"キログラムだよ。重さであって、体積じゃないよ。"
+],
+[
+"raj",
+"Ok, I am weighing now.",
+"分かりました、今量ります。"
+]
+],
+"pt": [
+"**Please add ~ kilograms/liters of ...**　〜キログラム／リットルの…を加えてください",
+"現場では kg（重さ）と liter（体積）を混同しやすいので、必ず単位を確認する習慣が大事です。"
+],
+"sen": [
+[
+"kilogram",
+"キログラム"
+],
+[
+"liter",
+"リットル"
+],
+[
+"weight",
+"重さ"
+],
+[
+"volume",
+"体積"
+],
+[
+"tank",
+"タンク"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"kilogram が表すのは？",
+"重さ",
+[
+"体積",
+"長さ"
+],
+"会話のポイントになっている表現です。「〜キログラム／リットルの…を加えてください」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました、今量ります。",
+[
+"キログラムだよ。重さであって、体積じゃないよ。",
+"タンクに粉末を5キログラム入れてください。",
+"一つ質問ですが、今月の給料日はいつも通りですか？"
+],
+"英文：Ok, I am weighing now.",
+"Ok, I am weighing now."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"キログラムだよ。重さであって、体積じゃないよ。",
+[
+"分かりました、今量ります。",
+"タンクに粉末を5キログラム入れてください。",
+"今日中に更新しておくから、心配しないで。"
+],
+"英文：Kilograms. Weight, not volume.",
+"Kilograms. Weight, not volume."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"タンクに粉末を5キログラム入れてください。",
+[
+"キログラムだよ。重さであって、体積じゃないよ。",
+"分かりました、今量ります。",
+"分かりました、きっかりに戻ります。"
+],
+"英文：Please add five kilograms of powder into the tank.",
+"Please add five kilograms of powder into the tank."
+],
+[
+"「kilogram」の意味は？",
+"キログラム",
+[
+"保守・整備",
+"ヘルメット",
+"外す"
+],
+"kilogram ＝ キログラム",
+"kilogram"
+]
+]
+},
+{
+"g": 1,
+"t": "品質チェック・不良品の報告",
+"s": "脇によけておいて",
+"chat": [
+[
+"raj",
+"Sir, this one bottle is looking different color.",
+"すみません、このボトル、色が違って見えます。"
+],
+[
+"kazu",
+"Show me. Yes, that's defective. Put it aside.",
+"見せて。うん、それは不良品だね。脇によけておいて。"
+],
+[
+"raj",
+"Should I throw or keep for checking?",
+"捨てますか、それとも確認用に取っておきますか？"
+],
+[
+"kazu",
+"Keep aside, don't throw. We report to supervisor.",
+"捨てずに脇に置いておいて。監督者に報告するから。"
+]
+],
+"pt": [
+"**Put it aside.**　脇によけておいて",
+"不良品を見つけたときに、捨てずに保管しておく指示。品質管理では「捨てない」がとても重要です。"
+],
+"sen": [
+[
+"defective",
+"不良の"
+],
+[
+"aside",
+"脇に"
+],
+[
+"supervisor",
+"監督者"
+],
+[
+"report",
+"報告する"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"不良品を見つけたらどうする？",
+"脇によけて報告する",
+[
+"すぐ捨てる",
+"そのまま使う"
+],
+"会話のポイントになっている表現です。「脇によけておいて」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"すみません、このボトル、色が違って見えます。",
+[
+"捨てますか、それとも確認用に取っておきますか？",
+"捨てずに脇に置いておいて。監督者に報告するから。",
+"ラジブ、チームへようこそ！僕はカズです。今週は僕が教育係をします。"
+],
+"英文：Sir, this one bottle is looking different color.",
+"Sir, this one bottle is looking different color."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"捨てずに脇に置いておいて。監督者に報告するから。",
+[
+"捨てますか、それとも確認用に取っておきますか？",
+"すみません、このボトル、色が違って見えます。",
+"はじめまして、カズさん。ここで働けることをとても楽しみにしています。"
+],
+"英文：Keep aside, don't throw. We report to supervisor.",
+"Keep aside, don't throw. We report to supervisor."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"捨てますか、それとも確認用に取っておきますか？",
+[
+"すみません、このボトル、色が違って見えます。",
+"捨てずに脇に置いておいて。監督者に報告するから。",
+"これがスタートボタン、これがストップボタンです。ゆっくり押してね。"
+],
+"英文：Should I throw or keep for checking?",
+"Should I throw or keep for checking?"
+],
+[
+"「defective」の意味は？",
+"不良の",
+[
+"いつでも",
+"豆カレー",
+"報告する"
+],
+"defective ＝ 不良の",
+"defective"
+]
+]
+},
+{
+"g": 1,
+"t": "休憩時間・シフト交代",
+"s": "休憩時間は〜から〜までです",
+"chat": [
+[
+"kazu",
+"Break time is 12 to 1. You can go now.",
+"休憩時間は12時から1時です。もう行っていいよ。"
+],
+[
+"raj",
+"Thank you sir. After break, same place?",
+"ありがとうございます。休憩後は同じ場所でいいですか？"
+],
+[
+"kazu",
+"Yes, same station. Next shift comes at 2.",
+"うん、同じ持ち場だよ。次のシフトは2時に来る。"
+],
+[
+"raj",
+"Understood, I will be back sharp.",
+"分かりました、きっかりに戻ります。"
+]
+],
+"pt": [
+"**Break time is ~ to ~.**　休憩時間は〜から〜までです",
+"時間を伝える基本パターン。sharp（きっかり）を添えると「時間厳守」のニュアンスが出ます。"
+],
+"sen": [
+[
+"break",
+"休憩"
+],
+[
+"station",
+"持ち場"
+],
+[
+"shift",
+"シフト"
+],
+[
+"sharp",
+"きっかり"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"\"I will be back sharp.\" の意味は？",
+"きっかりの時間に戻ります",
+[
+"だいたい戻ります",
+"戻りません"
+],
+"会話のポイントになっている表現です。「休憩時間は〜から〜までです」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"うん、同じ持ち場だよ。次のシフトは2時に来る。",
+[
+"休憩時間は12時から1時です。もう行っていいよ。",
+"ありがとうございます。休憩後は同じ場所でいいですか？",
+"分かりました、最大5段ですね、了解です。"
+],
+"英文：Yes, same station. Next shift comes at 2.",
+"Yes, same station. Next shift comes at 2."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました、きっかりに戻ります。",
+[
+"うん、同じ持ち場だよ。次のシフトは2時に来る。",
+"ありがとうございます。休憩後は同じ場所でいいですか？",
+"見せて。うん、それは不良品だね。脇によけておいて。"
+],
+"英文：Understood, I will be back sharp.",
+"Understood, I will be back sharp."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"休憩時間は12時から1時です。もう行っていいよ。",
+[
+"ありがとうございます。休憩後は同じ場所でいいですか？",
+"うん、同じ持ち場だよ。次のシフトは2時に来る。",
+"このボタンだけですか、それとも赤いのも？"
+],
+"英文：Break time is 12 to 1. You can go now.",
+"Break time is 12 to 1. You can go now."
+],
+[
+"「station」の意味は？",
+"持ち場",
+[
+"手袋",
+"カレー",
+"きっかり"
+],
+"station ＝ 持ち場",
+"station"
+]
+]
+},
+{
+"g": 1,
+"t": "遅刻・欠勤の連絡",
+"s": "遅れそうです、〜なので",
+"chat": [
+[
+"raj",
+"Sir, sorry, I am getting late today, traffic is heavy only.",
+"すみません、今日は遅れそうです、渋滞がひどくて。"
+],
+[
+"kazu",
+"Ok, thanks for telling. How much time more?",
+"分かった、教えてくれてありがとう。あとどれくらい？"
+],
+[
+"raj",
+"Maybe twenty minutes more, sorry for inconvenience.",
+"あと20分くらいだと思います、ご迷惑をおかけしてすみません。"
+],
+[
+"kazu",
+"No problem, drive safe.",
+"大丈夫だよ、安全運転でね。"
+]
+],
+"pt": [
+"**I am getting late, [理由].**　遅れそうです、〜なので",
+"遅刻連絡の基本フレーズ。理由をシンプルに付け加えるだけで十分に伝わります。"
+],
+"sen": [
+[
+"traffic",
+"渋滞"
+],
+[
+"inconvenience",
+"迷惑"
+],
+[
+"drive safe",
+"安全運転で"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"遅刻連絡で最も大事なことは？",
+"早めに連絡する",
+[
+"理由を長々説明する",
+"何も言わない"
+],
+"会話のポイントになっている表現です。「遅れそうです、〜なので」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"大丈夫だよ、安全運転でね。",
+[
+"すみません、今日は遅れそうです、渋滞がひどくて。",
+"分かった、教えてくれてありがとう。あとどれくらい？",
+"もちろん！「いつでも聞いて」と言ったんだよ。"
+],
+"英文：No problem, drive safe.",
+"No problem, drive safe."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"すみません、今日は遅れそうです、渋滞がひどくて。",
+[
+"分かった、教えてくれてありがとう。あとどれくらい？",
+"あと20分くらいだと思います、ご迷惑をおかけしてすみません。",
+"うん、同じ持ち場だよ。次のシフトは2時に来る。"
+],
+"英文：Sir, sorry, I am getting late today, traffic is heavy only.",
+"Sir, sorry, I am getting late today, traffic is heavy only."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かった、教えてくれてありがとう。あとどれくらい？",
+[
+"あと20分くらいだと思います、ご迷惑をおかけしてすみません。",
+"大丈夫だよ、安全運転でね。",
+"どちらの出口ですか、こっちですか、それともあっちですか？"
+],
+"英文：Ok, thanks for telling. How much time more?",
+"Ok, thanks for telling. How much time more?"
+],
+[
+"「drive safe」の意味は？",
+"安全運転で",
+[
+"タンク",
+"火災警報",
+"キログラム"
+],
+"drive safe ＝ 安全運転で",
+"drive safe"
+]
+]
+},
+{
+"g": 1,
+"t": "トラブル・機械故障の報告",
+"s": "何も触らないで",
+"chat": [
+[
+"raj",
+"Sir! Machine is making strange sound, and stopping suddenly!",
+"すみません！機械が変な音を立てて、急に止まりました！"
+],
+[
+"kazu",
+"Don't touch anything. Press the emergency stop.",
+"何も触らないで。緊急停止ボタンを押して。"
+],
+[
+"raj",
+"Already pressed sir, smoke also little bit coming.",
+"もう押しました、煙も少し出ています。"
+],
+[
+"kazu",
+"Ok, step back, I am calling maintenance now.",
+"分かった、下がって。今すぐ整備担当を呼ぶよ。"
+]
+],
+"pt": [
+"**Don't touch anything.**　何も触らないで",
+"緊急時にまず言うべき安全確保のフレーズ。パニックのときほどシンプルな命令文が有効です。"
+],
+"sen": [
+[
+"strange sound",
+"異音"
+],
+[
+"suddenly",
+"急に"
+],
+[
+"maintenance",
+"保守・整備"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"機械から煙が出たら最初にすべきことは？",
+"緊急停止ボタンを押す",
+[
+"写真を撮る",
+"そのまま様子を見る"
+],
+"会話のポイントになっている表現です。「何も触らないで」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"何も触らないで。緊急停止ボタンを押して。",
+[
+"もう押しました、煙も少し出ています。",
+"分かった、下がって。今すぐ整備担当を呼ぶよ。",
+"分かりました。安全第一、妥協しません。"
+],
+"英文：Don't touch anything. Press the emergency stop.",
+"Don't touch anything. Press the emergency stop."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"もう押しました、煙も少し出ています。",
+[
+"何も触らないで。緊急停止ボタンを押して。",
+"すみません！機械が変な音を立てて、急に止まりました！",
+"分かりました、今量ります。"
+],
+"英文：Already pressed sir, smoke also little bit coming.",
+"Already pressed sir, smoke also little bit coming."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かった、下がって。今すぐ整備担当を呼ぶよ。",
+[
+"何も触らないで。緊急停止ボタンを押して。",
+"すみません！機械が変な音を立てて、急に止まりました！",
+"グジャラート州の、アーメダバード近くの小さな町の出身です。"
+],
+"英文：Ok, step back, I am calling maintenance now.",
+"Ok, step back, I am calling maintenance now."
+],
+[
+"「maintenance」の意味は？",
+"保守・整備",
+[
+"体積",
+"脇に",
+"押す"
+],
+"maintenance ＝ 保守・整備",
+"maintenance"
+]
+]
+},
+{
+"g": 1,
+"t": "在庫・搬入搬出の指示",
+"s": "〜以上にはしないで",
+"chat": [
+[
+"kazu",
+"New boxes are coming today, please clear this space.",
+"今日新しい箱が届くから、このスペースを空けておいて。"
+],
+[
+"raj",
+"This shelf, or that one near door?",
+"この棚ですか、それともドアの近くのですか？"
+],
+[
+"kazu",
+"Near door. Stack them not more than five high.",
+"ドアの近くだよ。5段以上には積まないでね。"
+],
+[
+"raj",
+"Ok, five box height maximum, noted.",
+"分かりました、最大5段ですね、了解です。"
+]
+],
+"pt": [
+"**Not more than ~.**　〜以上にはしないで",
+"上限を伝える表現。安全のための積み上げ制限などによく使われます。"
+],
+"sen": [
+[
+"shelf",
+"棚"
+],
+[
+"stack",
+"積む"
+],
+[
+"maximum",
+"最大"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"箱は最大何段まで積んでいい？",
+"5段",
+[
+"3段",
+"制限なし"
+],
+"会話のポイントになっている表現です。「〜以上にはしないで」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"この棚ですか、それともドアの近くのですか？",
+[
+"分かりました、最大5段ですね、了解です。",
+"ドアの近くだよ。5段以上には積まないでね。",
+"全員作業を止めて！火災警報です、今すぐ避難して！"
+],
+"英文：This shelf, or that one near door?",
+"This shelf, or that one near door?"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"ドアの近くだよ。5段以上には積まないでね。",
+[
+"この棚ですか、それともドアの近くのですか？",
+"分かりました、最大5段ですね、了解です。",
+"分かりました、理解できました。"
+],
+"英文：Near door. Stack them not more than five high.",
+"Near door. Stack them not more than five high."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"今日新しい箱が届くから、このスペースを空けておいて。",
+[
+"この棚ですか、それともドアの近くのですか？",
+"ドアの近くだよ。5段以上には積まないでね。",
+"タンクに粉末を5キログラム入れてください。"
+],
+"英文：New boxes are coming today, please clear this space.",
+"New boxes are coming today, please clear this space."
+],
+[
+"「shelf」の意味は？",
+"棚",
+[
+"押す",
+"避難する",
+"脇に"
+],
+"shelf ＝ 棚",
+"shelf"
+]
+]
+},
+{
+"g": 1,
+"t": "衛生管理",
+"s": "…に入る前は必ず〜してください",
+"chat": [
+[
+"kazu",
+"Always wash hands before entering the production area.",
+"製造区域に入る前は、必ず手を洗ってください。"
+],
+[
+"raj",
+"Even after wearing gloves also, sir?",
+"手袋をしていても、ですか？"
+],
+[
+"kazu",
+"Yes, gloves protect product, hands must be clean first.",
+"うん、手袋は製品を守るためのもの。その前に手をきれいにしないとね。"
+],
+[
+"raj",
+"Ok understood, hygiene is very important here.",
+"分かりました、ここでは衛生がとても大事なんですね。"
+]
+],
+"pt": [
+"**Always ~ before entering ...**　…に入る前は必ず〜してください",
+"衛生ルールを伝える基本パターン。「必ず」を表す always がポイントです。"
+],
+"sen": [
+[
+"production area",
+"製造区域"
+],
+[
+"hygiene",
+"衛生"
+],
+[
+"protect",
+"守る"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"手袋をしていれば手を洗わなくてよい？",
+"だめ、必ず洗う",
+[
+"よい",
+"場合による"
+],
+"会話のポイントになっている表現です。「…に入る前は必ず〜してください」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"うん、手袋は製品を守るためのもの。その前に手をきれいにしないとね。",
+[
+"手袋をしていても、ですか？",
+"製造区域に入る前は、必ず手を洗ってください。",
+"分かりました。このヘルメット、ちょっときついです。"
+],
+"英文：Yes, gloves protect product, hands must be clean first.",
+"Yes, gloves protect product, hands must be clean first."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"製造区域に入る前は、必ず手を洗ってください。",
+[
+"手袋をしていても、ですか？",
+"うん、手袋は製品を守るためのもの。その前に手をきれいにしないとね。",
+"捨てますか、それとも確認用に取っておきますか？"
+],
+"英文：Always wash hands before entering the production area.",
+"Always wash hands before entering the production area."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"手袋をしていても、ですか？",
+[
+"分かりました、ここでは衛生がとても大事なんですね。",
+"製造区域に入る前は、必ず手を洗ってください。",
+"キログラムだよ。重さであって、体積じゃないよ。"
+],
+"英文：Even after wearing gloves also, sir?",
+"Even after wearing gloves also, sir?"
+],
+[
+"「hygiene」の意味は？",
+"衛生",
+[
+"保守・整備",
+"体積",
+"渋滞"
+],
+"hygiene ＝ 衛生",
+"hygiene"
+]
+]
+},
+{
+"g": 1,
+"t": "シフト表・給料についての質問",
+"s": "一つ疑問があるのですが〜？",
+"chat": [
+[
+"raj",
+"Sir, one doubt, this month salary date is same as before?",
+"一つ質問ですが、今月の給料日はいつも通りですか？"
+],
+[
+"kazu",
+"Yes, 25th same as usual. Check your shift table too.",
+"うん、いつも通り25日だよ。シフト表も確認してね。"
+],
+[
+"raj",
+"I saw, but next week shift is not clear only.",
+"見ましたが、来週のシフトがはっきりしないんです。"
+],
+[
+"kazu",
+"I'll update it today, don't worry.",
+"今日中に更新しておくから、心配しないで。"
+]
+],
+"pt": [
+"**One doubt, ~?**　一つ疑問があるのですが〜？",
+"質問を切り出すときの丁寧な前置き表現。現場で非常によく使われます。標準英語では doubt は「疑い」という意味ですが、Indian Englishでは「question（質問）」の意味でよく使われます。文法の間違いではなく、実際の現場でとてもよく耳にする自然な言い回しです。"
+],
+"sen": [
+[
+"salary",
+"給料"
+],
+[
+"shift table",
+"シフト表"
+],
+[
+"update",
+"更新する"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"給料日はいつ？",
+"25日",
+[
+"月末",
+"月初"
+],
+"会話のポイントになっている表現です。「一つ疑問があるのですが〜？」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"今日中に更新しておくから、心配しないで。",
+[
+"うん、いつも通り25日だよ。シフト表も確認してね。",
+"見ましたが、来週のシフトがはっきりしないんです。",
+"グジャラート州の、アーメダバード近くの小さな町の出身です。"
+],
+"英文：I'll update it today, don't worry.",
+"I'll update it today, don't worry."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"見ましたが、来週のシフトがはっきりしないんです。",
+[
+"うん、いつも通り25日だよ。シフト表も確認してね。",
+"一つ質問ですが、今月の給料日はいつも通りですか？",
+"この棚ですか、それともドアの近くのですか？"
+],
+"英文：I saw, but next week shift is not clear only.",
+"I saw, but next week shift is not clear only."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"一つ質問ですが、今月の給料日はいつも通りですか？",
+[
+"見ましたが、来週のシフトがはっきりしないんです。",
+"今日中に更新しておくから、心配しないで。",
+"どちらの出口ですか、こっちですか、それともあっちですか？"
+],
+"英文：Sir, one doubt, this month salary date is same as before?",
+"Sir, one doubt, this month salary date is same as before?"
+],
+[
+"「salary」の意味は？",
+"給料",
+[
+"きつい",
+"保守・整備",
+"ヘルメット"
+],
+"salary ＝ 給料",
+"salary"
+]
+]
+},
+{
+"g": 1,
+"t": "雑談・関係づくり",
+"s": "普段〜しますか？",
+"chat": [
+[
+"kazu",
+"Rajibu, what do you usually eat for lunch?",
+"ラジブ、お昼はいつも何を食べているの？"
+],
+[
+"raj",
+"Sir, mostly rice and dal, sometimes curry only.",
+"だいたいご飯と豆カレーです、時々カレーだけの日もあります。"
+],
+[
+"kazu",
+"Sounds nice. Where are you from in India?",
+"いいね。インドのどこの出身なの？"
+],
+[
+"raj",
+"I am from Gujarat, small town near Ahmedabad.",
+"グジャラート州の、アーメダバード近くの小さな町の出身です。"
+]
+],
+"pt": [
+"**What do you usually ~?**　普段〜しますか？",
+"雑談で相手のことを知るための定番の質問パターン。人間関係づくりに役立ちます。"
+],
+"sen": [
+[
+"dal",
+"豆カレー"
+],
+[
+"curry",
+"カレー"
+],
+[
+"hometown",
+"出身地"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"ラジブの出身は？",
+"Ahmedabad近くの町",
+[
+"Delhi",
+"Mumbai"
+],
+"会話のポイントになっている表現です。「普段〜しますか？」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"だいたいご飯と豆カレーです、時々カレーだけの日もあります。",
+[
+"ラジブ、お昼はいつも何を食べているの？",
+"いいね。インドのどこの出身なの？",
+"分かった、教えてくれてありがとう。あとどれくらい？"
+],
+"英文：Sir, mostly rice and dal, sometimes curry only.",
+"Sir, mostly rice and dal, sometimes curry only."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"グジャラート州の、アーメダバード近くの小さな町の出身です。",
+[
+"いいね。インドのどこの出身なの？",
+"ラジブ、お昼はいつも何を食べているの？",
+"分かりました、ここでは衛生がとても大事なんですね。"
+],
+"英文：I am from Gujarat, small town near Ahmedabad.",
+"I am from Gujarat, small town near Ahmedabad."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"いいね。インドのどこの出身なの？",
+[
+"ラジブ、お昼はいつも何を食べているの？",
+"だいたいご飯と豆カレーです、時々カレーだけの日もあります。",
+"ドアの近くだよ。5段以上には積まないでね。"
+],
+"英文：Sounds nice. Where are you from in India?",
+"Sounds nice. Where are you from in India?"
+],
+[
+"「dal」の意味は？",
+"豆カレー",
+[
+"止める",
+"カレー",
+"安全運転で"
+],
+"dal ＝ 豆カレー",
+"dal"
+]
+]
+},
+{
+"g": 1,
+"t": "緊急時対応",
+"s": "今すぐ避難して！",
+"chat": [
+[
+"kazu",
+"Everyone stop work! There's a fire alarm, evacuate now!",
+"全員作業を止めて！火災警報です、今すぐ避難して！"
+],
+[
+"raj",
+"Sir, which exit, this side or that side?",
+"どちらの出口ですか、こっちですか、それともあっちですか？"
+],
+[
+"kazu",
+"This side, follow the green light signs. Don't run.",
+"こっちだよ、緑色の誘導灯に従って。走らないでね。"
+],
+[
+"raj",
+"Ok, walking fast, not running, understood.",
+"分かりました、走らずに速歩きします。"
+]
+],
+"pt": [
+"**Evacuate now!**　今すぐ避難して！",
+"緊急時の命令文。短く強い表現で全員にすぐ伝わるようにします。"
+],
+"sen": [
+[
+"fire alarm",
+"火災警報"
+],
+[
+"evacuate",
+"避難する"
+],
+[
+"exit",
+"出口"
+],
+[
+"green light signs",
+"避難誘導灯"
+]
+],
+"senTitle": "単語",
+"qs": [
+[
+"避難するときは走ってもいい？",
+"走らず速歩きで",
+[
+"走ってよい",
+"立ち止まる"
+],
+"会話のポイントになっている表現です。「今すぐ避難して！」"
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"分かりました、走らずに速歩きします。",
+[
+"こっちだよ、緑色の誘導灯に従って。走らないでね。",
+"どちらの出口ですか、こっちですか、それともあっちですか？",
+"分かった、教えてくれてありがとう。あとどれくらい？"
+],
+"英文：Ok, walking fast, not running, understood.",
+"Ok, walking fast, not running, understood."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"こっちだよ、緑色の誘導灯に従って。走らないでね。",
+[
+"分かりました、走らずに速歩きします。",
+"全員作業を止めて！火災警報です、今すぐ避難して！",
+"うん、同じ持ち場だよ。次のシフトは2時に来る。"
+],
+"英文：This side, follow the green light signs. Don't run.",
+"This side, follow the green light signs. Don't run."
+],
+[
+"音声を聞いて、意味に合うものを選ぼう。",
+"どちらの出口ですか、こっちですか、それともあっちですか？",
+[
+"全員作業を止めて！火災警報です、今すぐ避難して！",
+"こっちだよ、緑色の誘導灯に従って。走らないでね。",
+"はじめまして、カズさん。ここで働けることをとても楽しみにしています。"
+],
+"英文：Sir, which exit, this side or that side?",
+"Sir, which exit, this side or that side?"
+],
+[
+"「green light signs」の意味は？",
+"避難誘導灯",
+[
+"守る",
+"リットル",
+"避難する"
+],
+"green light signs ＝ 避難誘導灯",
+"green light signs"
+]
+]
+}
+]);
+
+</script>
+<script>
+/* ===================== 図（SVG） ===================== */
+const FIG=(()=>{
+ const W='viewBox="0 0 320 180" class="fig" role="img"';
+ const ax=(ox,oy,w,h)=>`<line x1="${ox-w}" y1="${oy}" x2="${ox+w}" y2="${oy}" class="ax"/><line x1="${ox}" y1="${oy+h}" x2="${ox}" y2="${oy-h}" class="ax"/><text x="${ox+w-8}" y="${oy+16}" class="lb">x</text><text x="${ox+8}" y="${oy-h+10}" class="lb">y</text><text x="${ox-12}" y="${oy+16}" class="lb">O</text>`;
+ const path=(f,x0,x1,ox,oy,s)=>{let d='';for(let x=x0;x<=x1+1e-9;x+=(x1-x0)/60){const y=f(x);if(!isFinite(y)||Math.abs(y)>9)continue;d+=(d?'L':'M')+(ox+x*s).toFixed(1)+' '+(oy-y*s).toFixed(1)}return d};
+ return {
+  numline(){let t='';for(let i=-5;i<=5;i++){const x=160+i*28;t+=`<line x1="${x}" y1="84" x2="${x}" y2="96" class="ax"/><text x="${x}" y="116" class="lb c">${i>0?'+'+i:i<0?'−'+(-i):i}</text>`}
+   return `<svg ${W}><line x1="10" y1="90" x2="310" y2="90" class="ax"/><path d="M310 90l-10-5v10z" class="axf"/>${t}
+   <circle cx="76" cy="90" r="7" class="pt2"/><circle cx="244" cy="90" r="7" class="pt"/>
+   <path d="M76 66 Q118 40 160 66" class="ln2"/><path d="M160 66 Q202 40 244 66" class="ln"/>
+   <text x="118" y="38" class="lb c s2">絶対値 3</text><text x="202" y="38" class="lb c">絶対値 3</text>
+   <text x="60" y="150" class="lb c s2">負の数</text><text x="260" y="150" class="lb c">正の数</text></svg>`},
+  balance(){return `<svg ${W}><path d="M160 40v110M120 150h80" class="ax"/><path d="M60 60h200" class="ln" stroke-width="5"/>
+   <path d="M60 60l-30 50h60zM260 60l-30 50h60z" class="frame"/>
+   <rect x="34" y="88" width="30" height="22" rx="4" class="boxa"/><text x="49" y="104" class="lb c w">x</text>
+   <rect x="68" y="92" width="18" height="18" rx="3" class="boxb"/><text x="77" y="106" class="lb c w sm">3</text>
+   <rect x="236" y="88" width="48" height="22" rx="4" class="boxb"/><text x="260" y="104" class="lb c w">8</text>
+   <text x="160" y="28" class="lb c">x + 3 = 8 → 両方から3をとる → x = 5</text></svg>`},
+  graphs1(){return `<svg ${W}>${ax(160,95,140,80)}<path d="${path(x=>x,-3.2,3.2,160,95,24)}" class="ln"/><path d="${path(x=>3/x,0.35,5.8,160,95,24)}" class="ln2"/><path d="${path(x=>3/x,-5.8,-0.35,160,95,24)}" class="ln2"/>
+   <text x="14" y="24" class="lb">y = x（比例）</text><text x="14" y="44" class="lb s2">y = [3/x]（反比例）</text></svg>`.replace('[3/x]','3/x')},
+  sector(){return `<svg ${W}><circle cx="160" cy="95" r="70" class="frame" stroke-dasharray="5 5"/><path d="M160 95 L230 95 A70 70 0 0 0 125 34.4 Z" class="fill"/>
+   <path d="M230 95 A70 70 0 0 0 125 34.4" class="ln" stroke-width="5"/><text x="178" y="88" class="lb">中心角</text><text x="215" y="45" class="lb">弧</text><text x="190" y="112" class="lb">半径 r</text></svg>`},
+  linear(){return `<svg ${W}>${ax(160,110,140,90)}<path d="${path(x=>2*x-1,-1.6,3.2,160,110,20)}" class="ln"/>
+   <circle cx="160" cy="130" r="6" class="pt"/><path d="M160 130h20v-40" class="ln2" stroke-dasharray="4 4"/><circle cx="180" cy="90" r="6" class="pt"/>
+   <text x="186" y="136" class="lb s2">右へ1</text><text x="186" y="112" class="lb s2">上へ2</text><text x="40" y="160" class="lb">切片 (0, −1)</text><text x="222" y="30" class="lb">y = 2x − 1</text></svg>`},
+  parallel(){return `<svg ${W}><path d="M20 60h280M20 130h280" class="ax"/><path d="M110 170L210 20" class="ln"/>
+   <path d="M196 60 A14 14 0 0 1 182 48" class="ln2" stroke-width="3"/><path d="M149 130 A14 14 0 0 1 135 118" class="ln2" stroke-width="3"/><path d="M152 118 A14 14 0 0 1 166 130" class="ln3" stroke-width="3"/>
+   <text x="200" y="44" class="lb s2">a</text><text x="128" y="112" class="lb s2">b</text><text x="166" y="120" class="lb s3">c</text>
+   <text x="16" y="168" class="lb">a と b：同位角　a と c：錯角（平行なら等しい）</text></svg>`},
+  boxplot(){const s=x=>40+x*20;return `<svg ${W}><line x1="${s(1)}" y1="80" x2="${s(3.5)}" y2="80" class="ln"/><line x1="${s(9.5)}" y1="80" x2="${s(12)}" y2="80" class="ln"/>
+   <rect x="${s(3.5)}" y="56" width="${s(9.5)-s(3.5)}" height="48" class="fill"/><rect x="${s(3.5)}" y="56" width="${s(9.5)-s(3.5)}" height="48" class="frame2"/><line x1="${s(6.5)}" y1="56" x2="${s(6.5)}" y2="104" class="ln2" stroke-width="4"/>
+   <line x1="${s(1)}" y1="68" x2="${s(1)}" y2="92" class="ln"/><line x1="${s(12)}" y1="68" x2="${s(12)}" y2="92" class="ln"/>
+   <text x="${s(1)}" y="126" class="lb c sm">最小値</text><text x="${s(3.5)}" y="146" class="lb c sm">第1四分位数</text><text x="${s(6.5)}" y="126" class="lb c sm s2">中央値</text><text x="${s(9.5)}" y="146" class="lb c sm">第3四分位数</text><text x="${s(12)}" y="126" class="lb c sm">最大値</text>
+   <path d="M${s(3.5)} 40h${s(9.5)-s(3.5)}" class="ln3"/><text x="${s(6.5)}" y="32" class="lb c sm s3">四分位範囲</text></svg>`},
+  parabola(){return `<svg ${W}>${ax(160,95,140,82)}<path d="${path(x=>x*x/2,-2.6,2.6,160,95,24)}" class="ln"/><path d="${path(x=>-x*x/2,-2.6,2.6,160,95,24)}" class="ln2"/>
+   <text x="228" y="30" class="lb">a &gt; 0</text><text x="228" y="46" class="lb">上に開く</text><text x="228" y="150" class="lb s2">a &lt; 0</text><text x="228" y="166" class="lb s2">下に開く</text></svg>`},
+  midpoint(){return `<svg ${W}><path d="M160 20L40 160H280Z" class="frame2"/><path d="M100 90H220" class="ln" stroke-width="5"/>
+   <circle cx="100" cy="90" r="5" class="pt"/><circle cx="220" cy="90" r="5" class="pt"/>
+   <text x="160" y="14" class="lb c">A</text><text x="30" y="174" class="lb">B</text><text x="282" y="174" class="lb">C</text><text x="84" y="88" class="lb">M</text><text x="226" y="88" class="lb">N</text>
+   <text x="160" y="82" class="lb c">MN</text><text x="160" y="176" class="lb c s2">BC（MN の2倍）</text></svg>`},
+  inscribed(){return `<svg ${W}><circle cx="160" cy="95" r="72" class="frame"/><path d="M98 131L160 95L222 131" class="ln2"/><path d="M98 131L160 23L222 131" class="ln"/>
+   <circle cx="160" cy="95" r="4" class="pt2"/><text x="160" y="16" class="lb c">P</text><text x="86" y="146" class="lb">A</text><text x="226" y="146" class="lb">B</text><text x="160" y="122" class="lb c s2">中心角</text><text x="174" y="46" class="lb">円周角 = 中心角 ÷ 2</text></svg>`},
+  pythagoras(){return `<svg ${W}><path d="M80 150H220V50Z" class="fill"/><path d="M80 150H220V50Z" class="frame2"/><path d="M206 150v-14h14" class="ax"/>
+   <text x="150" y="170" class="lb c">a</text><text x="232" y="104" class="lb">b</text><text x="96" y="94" class="lb s2">c（斜辺）</text><text x="160" y="24" class="lb c">a² + b² = c²</text></svg>`}
+ };
+})();
+
+/* ===================== アイコン ===================== */
+const IC={
+ star:'<svg viewBox="0 0 24 24" class="ic"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z" fill="currentColor"/></svg>',
+ fire:'<svg viewBox="0 0 24 24" class="ic"><path d="M12 22c-4.4 0-7.5-3-7.5-7.2 0-3.3 2.2-5.6 3.9-7.6.5 1.6 1.4 2.8 2.6 3.4C11 6.8 12.6 4 15.4 2c-.3 3 1 5 2.4 6.9 1.3 1.7 1.7 3.3 1.7 5.6C19.5 18.9 16.4 22 12 22z" fill="currentColor"/><path d="M12 20c-1.9 0-3.2-1.3-3.2-3.1 0-1.6 1.1-2.6 2.2-3.7.2 1 .8 1.7 1.6 1.9.1-1.4.6-2.6 1.7-3.6.2 1.5 1 2.4 1.6 3.4.4.6.5 1.2.5 2C16.4 18.7 14.4 20 12 20z" fill="#fff" opacity=".55"/></svg>',
+ play:'<svg viewBox="0 0 24 24" class="ic"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>',
+ check:'<svg viewBox="0 0 24 24" class="ic"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ x:'<svg viewBox="0 0 24 24" class="ic"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>',
+ home:'<svg viewBox="0 0 24 24" class="ic"><path d="M3.5 11L12 4l8.5 7v9a1 1 0 01-1 1h-5v-6h-5v6h-5a1 1 0 01-1-1z" fill="currentColor"/></svg>',
+ redo:'<svg viewBox="0 0 24 24" class="ic"><path d="M12 4a8 8 0 107.7 10.2" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M14.5 2.5L20 4l-1.5 5.5z" fill="currentColor"/></svg>',
+ grid:'<svg viewBox="0 0 24 24" class="ic"><rect x="4" y="4" width="7" height="7" rx="2" fill="currentColor"/><rect x="13" y="4" width="7" height="7" rx="2" fill="currentColor"/><rect x="4" y="13" width="7" height="7" rx="2" fill="currentColor"/><rect x="13" y="13" width="7" height="7" rx="2" fill="currentColor"/></svg>',
+ lock:'<svg viewBox="0 0 24 24" class="ic"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M8 10.5V8a4 4 0 018 0v2.5" stroke="currentColor" stroke-width="2.4" fill="none"/></svg>',
+ bulb:'<svg viewBox="0 0 24 24" class="ic"><path d="M12 2.5a6.5 6.5 0 00-3.8 11.8c.6.5.8 1 .8 1.7V17h6v-1c0-.7.3-1.2.8-1.7A6.5 6.5 0 0012 2.5z" fill="currentColor"/><rect x="9" y="18.5" width="6" height="2.5" rx="1.2" fill="currentColor"/></svg>',
+ pencil:'<svg viewBox="0 0 24 24" class="ic"><path d="M4 20l1-4.5L15.5 5a2 2 0 012.8 0l.7.7a2 2 0 010 2.8L8.5 19z" fill="currentColor"/><path d="M4 20l4.5-1-3.5-3.5z" fill="#fff" opacity=".6"/></svg>',
+ sound:'<svg viewBox="0 0 24 24" class="ic"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>',
+ chat:'<svg viewBox="0 0 24 24" class="ic"><path d="M4 5.5A2.5 2.5 0 016.5 3h11A2.5 2.5 0 0120 5.5v8a2.5 2.5 0 01-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 014 14.5z" fill="currentColor"/></svg>',
+ mute:'<svg viewBox="0 0 24 24" class="ic"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ clip:'<svg viewBox="0 0 24 24" class="ic"><rect x="4.5" y="4" width="15" height="18" rx="2.5" fill="currentColor"/><rect x="8.5" y="2" width="7" height="4.5" rx="1.5" fill="currentColor" stroke="#fff" stroke-width="1.5"/><path d="M8 12.5l2.2 2.2L16 9" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ trophy:'<svg viewBox="0 0 24 24" class="ic"><path d="M7 3h10v5a5 5 0 01-10 0z" fill="currentColor"/><path d="M7 5H4v1.5A3.5 3.5 0 007.5 10M17 5h3v1.5a3.5 3.5 0 01-3.5 3.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M10 13h4v4h-4z" fill="currentColor"/><rect x="7" y="17" width="10" height="3.5" rx="1.2" fill="currentColor"/></svg>'
+};
+document.querySelectorAll('[data-ic]').forEach(e=>e.innerHTML=IC[e.dataset.ic]);
+if(FEAT.notest){document.querySelectorAll('[data-k="test"]').forEach(e=>e.remove())}
+if(FEAT.nobundle){document.querySelectorAll('.btn.set').forEach(e=>e.remove())}
+
+/* ===================== 音声（録音済みmp3 → なければブラウザの英語音声） ===================== */
+let _au=null;
+function say(t){try{if(_au){_au.pause();_au=null}speechSynthesis&&speechSynthesis.cancel()}catch(e){}
+ const id=AUDIO[t];let fell=false;const fb=()=>{if(fell)return;fell=true;tts(t)};
+ if(id){_au=new Audio(id+'.mp3');_au.onerror=fb;_au.play().catch(fb)}else tts(t)}
+function playAll(){const L=(U&&U.chat)||[];let k=0;
+ (function next(){if(k>=L.length)return;const t=L[k++][1],id=AUDIO[t];
+  if(id){_au=new Audio(id+'.mp3');_au.onended=()=>setTimeout(next,350);_au.onerror=()=>{tts(t);setTimeout(next,2500)};_au.play().catch(()=>{tts(t);setTimeout(next,2500)})}
+  else{tts(t);setTimeout(next,Math.max(1800,t.length*80))}})()}
+function tts(t){if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.92;
+ const vs=speechSynthesis.getVoices().filter(v=>/^en[-_]US/i.test(v.lang));
+ const v=vs.find(v=>/Samantha|Ava|Allison|Google US English|Jenny|Aria/i.test(v.name))||vs[0];if(v)u.voice=v;speechSynthesis.speak(u)}
+/* ===================== 保存 ===================== */
+const ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+const lj=(k,d)=>{try{return JSON.parse(ls(k))||d}catch(e){return d}};
+const PK=APP_ID+'_prog_v2',RK=APP_ID+'_review_v2',DK=APP_ID+'_days_v2',GK=APP_ID+'_grade_v2';
+let PROG=lj(PK,{}),REV=lj(RK,[]);
+
+/* ===================== 体験・購入（従来のキーをそのまま使う） ===================== */
+const TRIAL_DAYS=7,UNLOCK_KEY='app_unlocked_'+APP_ID,BUNDLE_KEY='bundle_unlocked_v1',TRIAL_KEY='app_trial_start_'+APP_ID;
+(function(){const p=new URLSearchParams(location.search);
+ if(p.get('unlock')==='yes')ls(UNLOCK_KEY,'true');
+ if(p.get('unlock')==='bundle')ls(BUNDLE_KEY,'true');
+ if(p.get('unlock'))history.replaceState(null,'',location.pathname);
+ if(!ls(TRIAL_KEY))ls(TRIAL_KEY,String(Date.now()));})();
+const isUnlocked=()=>ls(UNLOCK_KEY)==='true'||ls(BUNDLE_KEY)==='true';
+const daysLeft=()=>Math.max(0,Math.ceil(TRIAL_DAYS-(Date.now()-parseInt(ls(TRIAL_KEY)||Date.now(),10))/864e5));
+const trialOver=()=>!isUnlocked()&&daysLeft()<=0;
+function showTrial(){const t=document.getElementById('trial');if(isUnlocked()){t.classList.remove('on');return}
+ t.classList.add('on');document.getElementById('trialText').textContent=daysLeft()>0?`無料体験中：のこり${daysLeft()}日`:'無料体験は終了しました'}
+function openBuy(){const o=trialOver();document.getElementById('buyTtl').textContent=o?'無料体験が終わりました':'続けて学習するには';
+ document.getElementById('buyClose').hidden=o;document.getElementById('ovBuy').classList.add('on')}
+function closeBuy(){document.getElementById('ovBuy').classList.remove('on')}
+function guard(){if(trialOver()){openBuy();return false}return true}
+
+/* ===================== 表示ヘルパー ===================== */
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const fmt=s=>esc(s).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g,'<span class="fr"><span>$1</span><span>$2</span></span>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+UNITS.forEach(u=>{u.nb=u.qs.length;if(ADV[u.t])u.qs=u.qs.concat(ADV[u.t])});
+const GL=[...new Set(UNITS.map(u=>u.g))];
+UNITS.forEach((u,i)=>{u.i=i;u.n=UNITS.filter((x,j)=>x.g===u.g&&j<i).length+1;u.key=u.g+'-'+u.n});
+const starsOf=u=>PROG[u.key]||0;
+const GN={"1": "現場英会話"};const gName=g=>GN[g]||('中'+g);
+function curG(){const g=parseInt(ls(GK),10);return GL.includes(g)?g:GL[0]}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+
+/* ===================== 経験値・今日の目標・効果音 ===================== */
+const XK=APP_ID+'_xp_v2',DXK=APP_ID+'_dxp_v2',GOAL=50;
+const getXP=()=>parseInt(ls(XK)||'0',10)||0;
+function lvInfo(x){let l=1,need=100;while(x>=need){x-=need;l++;need=100+(l-1)*50}return {l,cur:x,need}}
+function todayXP(){return (lj(DXK,{}))[today()]||0}
+function addXP(n){const d=lj(DXK,{});const t=today();const before={lv:lvInfo(getXP()).l,day:d[t]||0};
+ ls(XK,String(getXP()+n));d[t]=(d[t]||0)+n;const keys=Object.keys(d);if(keys.length>60)delete d[keys[0]];ls(DXK,JSON.stringify(d));
+ const lv=lvInfo(getXP()).l;if(d[t]>=GOAL)markDay();return {lvUp:lv>before.lv,lv,goalNow:before.day<GOAL&&d[t]>=GOAL}}
+function ringHTML(v){const c=2*Math.PI*26,p=Math.min(1,v/GOAL);return `<div class="ring ${p>=1?'done':''}"><svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="26"/><circle class="fg" cx="30" cy="30" r="26" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p)}"/></svg>${IC.fire}</div>`}
+function lvHTML(){const L=lvInfo(getXP());return `<div class="lvl"><em>Lv.${L.l}</em><div class="lb"><i style="width:${L.cur/L.need*100}%"></i></div><span>${L.cur} / ${L.need} XP</span></div>`}
+function renderGoal(){const v=todayXP();
+ document.getElementById('goal').innerHTML=ringHTML(v)+`<div class="gtxt"><small>今日の目標 ${GOAL} XP</small><b>${v>=GOAL?'今日の目標クリア':'あと '+(GOAL-v)+' XP'}</b>${lvHTML()}</div>`}
+let sfxOn=ls('mikata_sfx')!=='off',AC=null;
+function toggleSfx(){sfxOn=!sfxOn;ls('mikata_sfx',sfxOn?'on':'off');drawSfx()}
+function drawSfx(){const b=document.getElementById('sfxBtn');if(b)b.innerHTML=sfxOn?IC.sound:IC.mute}
+function tone(f,t0,d,type,vol){const o=AC.createOscillator(),g=AC.createGain();o.type=type||'sine';o.frequency.value=f;
+ g.gain.setValueAtTime(0,AC.currentTime+t0);g.gain.linearRampToValueAtTime(vol||.18,AC.currentTime+t0+.01);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+t0+d);
+ o.connect(g);g.connect(AC.destination);o.start(AC.currentTime+t0);o.stop(AC.currentTime+t0+d+.02)}
+function sfx(k,n){if(!sfxOn)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+ if(k==='ok'){const b=1+Math.min(n||0,6)*.06;tone(784*b,0,.12,'triangle');tone(1175*b,.08,.22,'triangle')}
+ else if(k==='ng'){tone(220,0,.18,'square',.08);tone(185,.12,.25,'square',.08)}
+ else if(k==='fin'){[523,659,784,1047].forEach((f,i)=>tone(f,i*.1,.3,'triangle'))}
+ else if(k==='lv'){[523,659,784,1047,1319].forEach((f,i)=>tone(f,i*.08,.35,'triangle',.16))}}catch(e){}}
+function confetti(n){const cols=['#58cc02','#1cb0f6','#ffc800','#ff4b4b','#ce82ff','#ff9600'];
+ for(let i=0;i<(n||70);i++){const e=document.createElement('i');e.className='cf';e.style.left=Math.random()*100+'vw';e.style.background=cols[i%cols.length];
+  e.style.setProperty('--dx',(Math.random()*160-80)+'px');e.style.setProperty('--r',(Math.random()*900-450)+'deg');
+  e.style.animationDuration=(1.6+Math.random()*1.4)+'s';e.style.animationDelay=(Math.random()*.4)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3600)}}
+function countUp(el,to){let v=0;const st=performance.now();(function f(t){v=Math.min(to,Math.round(to*Math.min(1,(t-st)/700)));el.textContent='+'+v+' XP';if(v<to)requestAnimationFrame(f)})(st)}
+/* ===================== 連続日数 ===================== */
+const today=()=>{const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()};
+function markDay(){const d=lj(DK,[]);if(!d.includes(today())){d.push(today());ls(DK,JSON.stringify(d.slice(-400)))}}
+function streak(){const d=new Set(lj(DK,[]));let n=0;const t=new Date();
+ const key=x=>x.getFullYear()+'-'+(x.getMonth()+1)+'-'+x.getDate();
+ if(!d.has(key(t)))t.setDate(t.getDate()-1);
+ while(d.has(key(t))){n++;t.setDate(t.getDate()-1)}return n}
+
+/* ===================== 画面 ===================== */
+function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));
+ const NAVS={sHome:'home',sReview:'review',sTest:'test'};
+ document.body.classList.toggle('navon',!!NAVS[id]);document.body.classList.toggle('home',!!NAVS[id]);
+ document.querySelectorAll('#bnav button').forEach(b=>b.classList.toggle('on',b.dataset.k===NAVS[id]));
+ if(id==='sHome')renderHome();if(id==='sReview')renderReview();if(id==='sTest')renderTest();if(id==='sCheck')renderCheck();
+ window.scrollTo(0,0)}
+const XS=[0,56,80,56,0,-56,-80,-56];
+function renderHome(){
+ showTrial();
+ document.getElementById('streak').textContent=streak();
+ document.querySelector('.chip.fire').classList.toggle('off',todayXP()<GOAL);
+ renderGoal();
+ document.getElementById('stars').textContent=UNITS.reduce((a,u)=>a+starsOf(u),0);
+ const g=curG();document.getElementById('gtabs').style.display=GL.length<2?'none':'';
+ document.getElementById('gtabs').innerHTML=GL.map(x=>{const us=UNITS.filter(u=>u.g===x);
+  return `<button class="gtab ${x===g?'on':''}" onclick="setG(${x})"><b>${gName(x)}</b><i>${us.filter(u=>starsOf(u)>0).length} / ${us.length}</i></button>`}).join('');
+ const us=UNITS.filter(u=>u.g===g),nx=us.find(u=>starsOf(u)===0)||us.find(u=>starsOf(u)<3)||us[0];
+ const done=us.filter(u=>starsOf(u)>0).length;
+ document.getElementById('band').innerHTML=`<div><small>${gName(g)}・つぎの${UW}</small><b>${esc(nx.t)}</b><span>${done} / ${us.length} ${UW}クリア</span></div><button class="go" onclick="openUnit(${nx.i})" aria-label="はじめる">${IC.play}</button>`;
+ document.getElementById('path').innerHTML=us.map((u,k)=>{const s=starsOf(u),cur=u===nx;
+  const cls=cur?'cur':s===3?'gold':s>0?'done':'todo';
+  const inner=cur?IC.play:s===3?IC.star:s>0?IC.check:u.n;
+  return `<div class="nrow" style="--x:${XS[k%XS.length]}px">${cur?'<div class="bub">スタート</div>':''}
+   <button class="node ${cls}" onclick="openUnit(${u.i})" aria-label="${esc(u.t)}">${inner}</button>
+   <div class="nst">${[1,2,3].map(n=>`<span class="${n<=s?'on':''}">${IC.star}</span>`).join('')}</div>
+   <div class="nt">${esc(u.t)}<small>${fmt(u.s)}</small></div></div>`}).join('');
+ const n=REV.length,b=document.getElementById('rvBadge');b.hidden=!n;b.textContent=n;
+}
+function setG(g){ls(GK,String(g));renderHome()}
+
+/* ===================== ポイント ===================== */
+let U=null;
+function openUnit(i){if(!guard())return;U=UNITS[i];
+ document.getElementById('pTag').textContent=`${gName(U.g)}・${UW}${U.n}`;
+ document.getElementById('pTitle').textContent=U.t;
+ document.getElementById('pSub').innerHTML=fmt(U.s);
+ document.getElementById('pFig').innerHTML=U.fig&&FIG[U.fig]?FIG[U.fig]():'';
+ document.getElementById('pList').innerHTML=U.pt.map(p=>`<li>${fmt(p)}</li>`).join('');
+ document.getElementById('senCard').hidden=!U.sen;document.getElementById('senTitle').textContent=U.senTitle||'例文';
+ document.getElementById('chatCard').hidden=!U.chat;
+ if(U.chat)document.getElementById('chatList').innerHTML=U.chat.map(([sp,en,ja],k)=>{const P=FEAT.people[sp]||{n:sp,c:'#999',r:0};
+  return `<div class="cl ${P.r?'r':''}"><div class="av" style="background:${P.c}">${P.n.slice(0,1)}</div><div class="cb"><small>${esc(P.n)}</small><div class="ce"><span>${esc(en)}</span><button class="spk sm" onclick="say(${esc(JSON.stringify(en))})" aria-label="きく">${IC.sound}</button></div><div class="cj">${fmt(ja)}</div></div></div>`}).join('');
+ if(U.sen)document.getElementById('senList').innerHTML=U.sen.map(([en,ja])=>`<li><button class="spk" onclick="say(${esc(JSON.stringify(en))})" aria-label="きく">${IC.sound}</button><div><span class="en">${esc(en)}</span><span class="ja">${fmt(ja)}</span></div></li>`).join('');
+ const ck=CK[U.t]||[];document.getElementById('ckCard').hidden=!ck.length;
+ document.getElementById('ckUnit').innerHTML=ck.map((c,k)=>ckRow(U.i,k,c,false)).join('');
+ document.getElementById('exCard').hidden=!U.ex;
+ if(U.ex){document.getElementById('exQ').innerHTML=fmt(U.ex.q);
+ const a=document.getElementById('exA');a.innerHTML=U.ex.a.map(x=>`<li>${fmt(x)}</li>`).join('');a.classList.remove('on');}
+ document.getElementById('exBtn').hidden=false;
+ document.getElementById('startBtn').textContent=U.qs.length>U.nb?`問題をとく（基本${U.nb}問＋応用${U.qs.length-U.nb}問）`:`問題をとく（${U.qs.length}問）`;
+ go('sPoint')}
+function showEx(){document.getElementById('exA').classList.add('on');document.getElementById('exBtn').hidden=true}
+
+/* ===================== 問題 ===================== */
+let Q=null;
+function startQuiz(list,mode){
+ const items=list||U.qs.map((q,j)=>({u:U.i,j}));
+ Q={items,k:0,ok:0,miss:[],mode:mode||'unit',sel:null,state:'pick',combo:0,best:0};
+ drawSfx();document.getElementById('combo').innerHTML='';
+ go('sQuiz');showQ()}
+function showQ(){const it=Q.items[Q.k],u=UNITS[it.u],q=u.qs[it.j];
+ Q.cur={u,q,opts:shuffle([q[1],...q[2]])};Q.sel=null;Q.state='pick';
+ document.getElementById('qBar').style.width=(Q.k/Q.items.length*100)+'%';
+ document.getElementById('qTag').textContent=Q.mode==='review'?`復習｜${gName(u.g)} ${u.t}`:(u.qs.length>u.nb?(Q.items[Q.k].j<u.nb?'基本　':'応用　'):'')+`${Q.k+1} / ${Q.items.length}`;
+ document.getElementById('qTag').classList.toggle('adv',Q.mode!=='review'&&Q.items[Q.k].j>=u.nb);
+ document.getElementById('qText').innerHTML=(q[4]?`<button class="spk big" onclick="say(${esc(JSON.stringify(q[4]))})" aria-label="きく">${IC.sound}</button>`:'')+fmt(q[0]);
+ if(q[4])setTimeout(()=>say(q[4]),350);
+ document.getElementById('opts').innerHTML=Q.cur.opts.map((o,n)=>`<button class="opt" data-n="${n}" onclick="pick(${n})"><span class="k">${n+1}</span><span>${fmt(o)}</span></button>`).join('');
+ const f=document.getElementById('qFoot');f.className='qfoot';
+ const b=document.getElementById('qBtn');b.className='btn dis';b.textContent='答えあわせ'}
+function pick(n){if(Q.state!=='pick')return;Q.sel=n;
+ document.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',+o.dataset.n===n));
+ document.getElementById('qBtn').className='btn pri'}
+function qAction(){
+ if(Q.state==='pick'){if(Q.sel===null)return;check()}
+ else{Q.k++;if(Q.k<Q.items.length)showQ();else finish()}}
+function check(){Q.state='done';const {q,opts,u}=Q.cur,it=Q.items[Q.k];const ok=opts[Q.sel]===q[1];const id=it.u+':'+it.j;
+ document.querySelectorAll('.opt').forEach(o=>{o.disabled=true;o.classList.remove('sel');const v=opts[+o.dataset.n];
+  if(v===q[1])o.classList.add('ok');else if(+o.dataset.n===Q.sel)o.classList.add('ng')});
+ const f=document.getElementById('qFoot');f.className='qfoot '+(ok?'good':'bad');
+ document.getElementById('fbh').innerHTML=ok?IC.check+'正解':IC.x+'不正解';
+ document.getElementById('fbx').innerHTML=(ok?'':`正解：<b>${fmt(q[1])}</b><br>`)+fmt(q[3]);
+ const b=document.getElementById('qBtn');b.className='btn pri';b.textContent='つぎへ';
+ if(ok){Q.ok++;Q.combo++;Q.best=Math.max(Q.best,Q.combo);REV=REV.filter(x=>x!==id);sfx('ok',Q.combo)}
+ else{Q.combo=0;Q.miss.push({q,u});if(!REV.includes(id))REV.push(id);sfx('ng');try{navigator.vibrate&&navigator.vibrate(60)}catch(e){}}
+ document.getElementById('combo').innerHTML=Q.combo>=2?`<b>${Q.combo}問連続 正解</b>`:'';
+ ls(RK,JSON.stringify(REV));
+ document.getElementById('qBar').style.width=((Q.k+1)/Q.items.length*100)+'%'}
+function quitQuiz(){go(Q&&Q.mode==='review'?'sReview':Q&&Q.mode==='test'?'sCheck':'sPoint')}
+function finish(){const n=Q.items.length,ok=Q.ok;let html='';
+ const bonus=(Q.mode==='unit'&&ok===n)?20:0,gain=ok*10+bonus,R=addXP(gain);sfx('fin');
+ const xpBlock=`<div class="xpgain"><span id="xpNum">+0 XP</span><small>正解 ${ok}問 × 10${bonus?' ＋ 全問正解ボーナス 20':''}${Q.best>=3?'　最大 '+Q.best+'問連続':''}</small></div>
+  <div class="goal resgoal">${ringHTML(todayXP())}<div class="gtxt"><small>今日の目標 ${GOAL} XP</small><b>${todayXP()>=GOAL?'今日の目標クリア':'あと '+(GOAL-todayXP())+' XP'}</b>${lvHTML()}</div></div>
+  ${R.goalNow?`<div class="gdone">${IC.fire}今日の目標を達成しました　連続 ${streak()}日</div>`:''}`;
+ if(Q.mode==='unit'){const r=ok/n,st=r===1?3:r>=.8?2:r>=.6?1:0;const prev=starsOf(U);if(st>prev){PROG[U.key]=st;ls(PK,JSON.stringify(PROG))}
+  const msg=st===3?'全問正解':st===2?'あと少しで満点':st===1?'クリア':'もう一度ポイントを確認しよう';
+  html=`<div class="bigst">${[1,2,3].map(k=>`<span class="${k<=st?'on':''}" style="animation-delay:${k*.15}s">${IC.star}</span>`).join('')}</div>
+  <h2>${msg}</h2><p>${esc(U.t)}</p>${xpBlock}
+  ${Q.miss.length?`<ul class="miss">${Q.miss.map(m=>`<li>${fmt(m.q[0])}<span>正解：${fmt(m.q[1])}</span></li>`).join('')}</ul>`:''}
+  <div class="stack">${st<3?`<button class="btn pri" onclick="startQuiz()">もう一度とく</button>`:''}
+  ${nextUnit()?`<button class="btn ${st<3?'sub':'pri'}" onclick="openUnit(${nextUnit().i})">つぎの${UW}へ</button>`:''}
+  <button class="btn sub" onclick="go('sHome')">学習の道にもどる</button></div>`}
+ else if(Q.mode==='test'){html=`<div class="bigst" style="color:var(--c)">${IC.clip}</div><h2>範囲テスト ${ok} / ${n}</h2><p>${ok===n?'範囲はばっちり。':ok>=n*.8?'あと少し。まちがえた問題を見直そう。':'チェック項目とまちがえた問題をもう一度確認しよう。'}</p>${xpBlock}
+  ${Q.miss.length?`<ul class="miss">${Q.miss.map(m=>`<li><small style="color:var(--c)">${esc(m.u.t)}</small><br>${fmt(m.q[0])}<span>正解：${fmt(m.q[1])}</span></li>`).join('')}</ul>`:''}
+  <div class="stack"><button class="btn pri" onclick="startRangeTest()">もう一度10問</button><button class="btn sub" onclick="go('sCheck')">チェック項目にもどる</button></div>`}
+ else{html=`<div class="bigst" style="color:var(--green)">${IC.trophy}</div><h2>復習おわり</h2><p>${n}問中 ${ok}問 正解</p>${xpBlock}
+  <p style="margin-top:6px">正解した問題は、復習リストから消えました。</p>
+  <div class="stack"><button class="btn pri" onclick="go('sReview')">復習リストへ</button><button class="btn sub" onclick="go('sHome')">学習の道にもどる</button></div>`}
+ document.getElementById('res').innerHTML=html;go('sResult');
+ countUp(document.getElementById('xpNum'),gain);
+ if(ok===n||R.goalNow)setTimeout(()=>confetti(60),250);
+ if(R.lvUp)setTimeout(()=>{document.getElementById('lvNum').textContent=R.lv;document.getElementById('lvMsg').textContent=`レベル${R.lv}になりました。この調子で続けよう。`;
+  document.getElementById('lvup').classList.add('on');sfx('lv');confetti(90)},1100)}
+function nextUnit(){const us=UNITS.filter(u=>u.g===U.g);return us[us.indexOf(U)+1]||null}
+
+/* ===================== 復習 ===================== */
+function renderReview(){const el=document.getElementById('rv');
+ const items=REV.map(id=>{const [u,j]=id.split(':').map(Number);return UNITS[u]&&UNITS[u].qs[j]?{u,j}:null}).filter(Boolean);
+ if(!items.length){el.innerHTML=`<div class="empty"><div>${IC.check}</div><h3>まちがえた問題はありません</h3><p>単元の問題でまちがえると、ここにたまります。</p></div>`;return}
+ el.innerHTML=`<div class="band" style="margin-bottom:14px"><div><small>復習リスト</small><b>${items.length}問</b><span>正解すると、リストから消えます</span></div></div>
+  <button class="btn pri" onclick="if(guard())startQuiz(shuffle(REVIEW_ITEMS()).slice(0,10),'review')">復習をはじめる（最大10問）</button>
+  <ul class="rvl" style="margin-top:16px">${items.map(x=>`<li><small>${gName(UNITS[x.u].g)}・${esc(UNITS[x.u].t)}</small>${fmt(UNITS[x.u].qs[x.j][0])}</li>`).join('')}</ul>`}
+const REVIEW_ITEMS=()=>REV.map(id=>{const [u,j]=id.split(':').map(Number);return UNITS[u]&&UNITS[u].qs[j]?{u,j}:null}).filter(Boolean);
+
+/* ===================== テスト前チェック ===================== */
+const CKK=APP_ID+'_ck_v2',TSK=APP_ID+'_tsel_v2';
+let CKD=new Set(lj(CKK,[])),TSEL=new Set(lj(TSK,[])),ckOnly=false,ckOpenAll=false,tG=null;
+const saveCk=()=>ls(CKK,JSON.stringify([...CKD])),saveSel=()=>ls(TSK,JSON.stringify([...TSEL]));
+function ckRow(ui,k,c,big){const id=ui+':'+k,d=CKD.has(id);
+ return `<li class="ck ${d?'done':''} ${ckOpenAll?'open':''}" data-id="${id}"><button class="ckb" onclick="ckToggle('${id}',this)" aria-label="覚えた">${IC.check}</button>
+  <div class="ckq" onclick="this.parentNode.classList.toggle('open')"><b>${fmt(c[0])}</b><span class="cka">${fmt(c[1])}</span><i class="ckh">タップで答え</i></div></li>`}
+function ckToggle(id,btn){CKD.has(id)?CKD.delete(id):CKD.add(id);saveCk();const li=btn.closest('.ck');li.classList.toggle('done',CKD.has(id));
+ if(CKD.has(id))sfx('ok',0);if(document.getElementById('sCheck').classList.contains('on'))ckProgress()}
+function selUnits(){return UNITS.filter(u=>TSEL.has(u.i))}
+function renderTest(){showTrial();const el=document.getElementById('tst');if(tG===null)tG=curG();
+ const us=UNITS.filter(u=>u.g===tG),all=us.every(u=>TSEL.has(u.i));
+ const S=selUnits(),tot=S.reduce((a,u)=>a+(CK[u.t]||[]).length,0),dn=S.reduce((a,u)=>a+(CK[u.t]||[]).filter((c,k)=>CKD.has(u.i+':'+k)).length,0);
+ el.innerHTML=`<p class="tlead">テストに出る単元を選ぶと、「ここだけはチェック」の一問一答と、その範囲だけの10問テストができます。</p>
+  <div class="gtabs">${GL.map(x=>`<button class="gtab ${x===tG?'on':''}" onclick="tG=${x};renderTest()"><b>${gName(x)}</b><i>${UNITS.filter(u=>u.g===x&&TSEL.has(u.i)).length}単元</i></button>`).join('')}</div>
+  <div class="tsel"><button class="tall" onclick="selAll(${tG},${!all})">${all?'すべて外す':'すべて選ぶ'}</button>
+  ${us.map(u=>{const c=CK[u.t]||[],d=c.filter((x,k)=>CKD.has(u.i+':'+k)).length;return `<label class="tu ${TSEL.has(u.i)?'on':''}"><input type="checkbox" ${TSEL.has(u.i)?'checked':''} onchange="selU(${u.i},this.checked)"><span class="tbox">${IC.check}</span><span class="tt">${esc(u.t)}<small>覚えた ${d} / ${c.length}</small></span></label>`}).join('')}</div>
+  <div class="tsum ${S.length?'':'off'}"><div><small>選んだ範囲</small><b>${S.length}単元・チェック ${tot}項目</b><div class="lvl"><div class="lb"><i style="width:${tot?dn/tot*100:0}%"></i></div><span>覚えた ${dn} / ${tot}</span></div></div></div>
+  <div class="stack"><button class="btn ${S.length?'pri':'dis'}" onclick="if(selUnits().length&&guard())go('sCheck')">チェックをはじめる</button><button class="btn ${S.length?'sub':'dis'}" onclick="if(selUnits().length)startRangeTest()">この範囲から10問テスト</button>
+  ${S.length?`<button class="tclear" onclick="TSEL.clear();saveSel();renderTest()">選んだ範囲をすべてクリア</button>`:''}</div>`}
+function selU(i,on){on?TSEL.add(i):TSEL.delete(i);saveSel();renderTest()}
+function selAll(g,on){UNITS.filter(u=>u.g===g).forEach(u=>on?TSEL.add(u.i):TSEL.delete(u.i));saveSel();renderTest()}
+function ckProgress(){const S=selUnits();let t=0,d=0;S.forEach(u=>(CK[u.t]||[]).forEach((c,k)=>{t++;if(CKD.has(u.i+':'+k))d++}));
+ document.getElementById('ckBar').style.width=(t?d/t*100:0)+'%';document.getElementById('ckCount').textContent=`${d} / ${t}`;
+ if(t&&d===t&&!ckProgress.fired){ckProgress.fired=true;confetti(60);sfx('fin')}}
+function renderCheck(){const S=selUnits();ckProgress.fired=false;
+ document.getElementById('ckOnly').innerHTML=(ckOnly?IC.check:'')+'まだ覚えていないものだけ';document.getElementById('ckOnly').classList.toggle('on',ckOnly);
+ document.getElementById('ckOpen').textContent=ckOpenAll?'答えをかくす':'答えをすべて表示';
+ document.getElementById('ckList').innerHTML=S.map(u=>{const rows=(CK[u.t]||[]).map((c,k)=>[c,k]).filter(([c,k])=>!ckOnly||!CKD.has(u.i+':'+k));
+  if(!rows.length)return '';return `<div class="ckg"><h3>${gName(u.g)}・${esc(u.t)}</h3><ul class="ckl">${rows.map(([c,k])=>ckRow(u.i,k,c,true)).join('')}</ul></div>`}).join('')
+  ||`<div class="empty"><div>${IC.check}</div><h3>ぜんぶ覚えました</h3><p>この範囲から10問テストで仕上げよう。</p></div>`;
+ ckProgress()}
+function startRangeTest(){if(!guard())return;const S=selUnits();if(!S.length)return;
+ let pool=[];S.forEach(u=>u.qs.forEach((q,j)=>pool.push({u:u.i,j})));
+ pool=shuffle(pool).slice(0,10);startQuiz(pool,'test')}
+
+/* ===================== PWA ===================== */
+(function(){const ICON='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';
+ const m={name:'はじめての現場英会話｜学びのミカタ',short_name:'はじめての現場英会話',start_url:'./',display:'standalone',background_color:'#ffffff',theme_color:'#ffffff',orientation:'portrait',
+  icons:[{src:'data:image/png;base64,'+ICON,sizes:'192x192',type:'image/png',purpose:'any maskable'},{src:'data:image/png;base64,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',sizes:'512x512',type:'image/png',purpose:'any maskable'}]};
+ const l=document.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:'application/json'}));document.head.appendChild(l);
+ const a=document.createElement('link');a.rel='apple-touch-icon';a.href='data:image/png;base64,'+ICON;document.head.appendChild(a);
+ [['apple-mobile-web-app-capable','yes'],['apple-mobile-web-app-title','はじめての現場英会話']].forEach(([n,c])=>{const e=document.createElement('meta');e.name=n;e.content=c;document.head.appendChild(e)});
+ const ios=/iphone|ipad|ipod/i.test(navigator.userAgent),sa=navigator.standalone;
+ if(ios&&!sa&&!ls('pwa_install_hint_dismissed'))setTimeout(()=>{const h=document.createElement('div');h.className='hint';
+  h.innerHTML='<div style="flex:1"><b>ホーム画面に追加</b>すると、アプリのように使えます。共有ボタン →「ホーム画面に追加」</div><button aria-label="とじる">'+IC.x+'</button>';
+  h.querySelector('button').onclick=()=>{h.remove();ls('pwa_install_hint_dismissed','true')};document.body.appendChild(h)},2500);
+})();
+
+go('sHome');
+if(trialOver())openBuy();
+</script>
+</body>
+</html>
